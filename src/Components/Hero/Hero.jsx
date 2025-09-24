@@ -5,7 +5,7 @@ import { Link } from "react-scroll";
 const Hero = () => {
   return (
     <section
-      id="hero"
+      id="home"
       className="relative min-h-screen flex flex-col justify-center items-center px-6 md:px-12"
       style={{
         backgroundImage: `
@@ -26,20 +26,24 @@ const Hero = () => {
           Eng. Ahmed El-Sherif
         </h1>
         <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-cyan-400 drop-shadow-md">
-          Reliability and Asset Management Engineer
+          Senior Reliability and Asset Management Consultant
+          <span className='block'>(Technical Trainer)</span>
         </h2>
         <p className="text-lg md:text-xl text-gray-200 mb-10 leading-relaxed max-w-xl mx-auto drop-shadow-md">
           Driving operational excellence by optimizing system reliability,
           minimizing downtime, and leveraging data analytics for proactive
           maintenance.
         </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-6">
-          <a
-            href="#projects"
+        <div className="flex flex-col sm:flex-row justify-center gap-6 cursor-pointer">
+          <Link
+            to="services"
+            smooth={true}
+                  duration={800}
+                  offset={-60}
             className="inline-block bg-cyan-600 hover:bg-cyan-700 transition-colors duration-300 text-white font-semibold px-8 py-3 rounded-lg shadow-lg focus:outline-none focus:ring-4 focus:ring-cyan-400"
           >
             View Services
-          </a>
+          </Link>
           <Link
             to="contact"
             smooth={true}

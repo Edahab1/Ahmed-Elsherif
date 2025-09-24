@@ -39,17 +39,20 @@ const About = () => {
               </ul>
             </p>
 
-            <div className="grid grid-cols-2 gap-4 mt-8">
+            <div className="grid grid-cols-2 gap-4">
               <div className="bg-white p-4 rounded-lg shadow-sm ">
                 <h4 className="font-semibold text-blue-700">Certifications</h4>
-                <p className="text-sm">* CMRP, CRL, CAMA2</p>
-                <p className="text-sm">* ASU-LI, BMI, TOT</p>
+                <p>CMRP, CRL, CAMA2, ASU-LI, BMI, TOT</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-lg shadow-sm">
+                <h4 className="font-semibold text-blue-700">Training hours</h4>
+                <p className="text-sm">* 3000+ hours in the Middle East</p>
               </div>
 
               <div className="bg-white p-4 rounded-lg shadow-sm">
                 <h4 className="font-semibold text-blue-700">Experience</h4>
-                <p className="text-sm">* 8+ Years in Reliability Engineering</p>
-                <p className="text-sm">* 15+ Years in the oil & gas Industry</p>
+                <p className="text-sm">* 17+ Years in Mechanical Maintenance & Reliability</p>
               </div>
             </div>
           </div>
