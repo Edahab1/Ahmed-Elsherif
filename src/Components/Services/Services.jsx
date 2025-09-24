@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import img1 from "/Asset Reliability.png";
 import img2 from "/CMRP.jpg";
 import img3 from "/engineering design.jpg";
-import img4 from "/CMRP.jpg"; // example extra card
+import img4 from "/CMRP.jpg";
 
 export default function Services() {
   const consultationCards = [
@@ -17,7 +17,6 @@ export default function Services() {
     { id: 4, title: "CMRP Certification", img: img2 },
     { id: 5, title: "Advanced Training", img: img3 },
     { id: 6, title: "Workshops", img: img1 },
-    { id: 7, title: "Workshops serv", img: img1 },
   ];
 
   const [activeTab, setActiveTab] = useState("consultation");
@@ -60,39 +59,52 @@ export default function Services() {
     >
       <h2 className="text-4xl font-bold mb-10 text-gray-800">Our Services</h2>
 
-      {/* Tabs */}
-      <div className="flex space-x-6 mb-8">
-        <button
-          onClick={() => {
-            setActiveTab("consultation");
-            setIndex(0);
-          }}
-          className={`px-6 py-2 rounded-full font-medium transition-colors ${
-            activeTab === "consultation"
-              ? "bg-cyan-500 text-white"
-              : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-          }`}
-        >
-          Consultation
-        </button>
-        <button
-          onClick={() => {
-            setActiveTab("training");
-            setIndex(0);
-          }}
-          className={`px-6 py-2 rounded-full font-medium transition-colors ${
-            activeTab === "training"
-              ? "bg-cyan-500 text-white"
-              : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-          }`}
-        >
-          Training
-        </button>
+      {/* Switch Toggle */}
+      <div className="flex items-center justify-center mb-10">
+        <div className="relative w-72 h-12 bg-gray-300 rounded-full flex items-center cursor-pointer">
+          {/* Sliding background */}
+          <div
+            className={`absolute top-1 left-1 h-10 w-1/2 bg-cyan-500 rounded-full shadow-md transform transition-transform duration-500 ease-in-out ${
+              activeTab === "training" ? "translate-x-full" : ""
+            }`}
+          />
+          {/* Options */}
+          <div className="flex w-full z-10">
+            <button
+              onClick={() => {
+                setActiveTab("consultation");
+                setIndex(0);
+              }}
+              className={`w-1/2 text-center font-medium transition-colors ${
+                activeTab === "consultation"
+                  ? "text-white"
+                  : "text-gray-700"
+              }`}
+            >
+              Consultation
+            </button>
+            <button
+              onClick={() => {
+                setActiveTab("training");
+                setIndex(0);
+              }}
+              className={`w-1/2 text-center font-medium transition-colors ${
+                activeTab === "training"
+                  ? "text-white"
+                  : "text-gray-700"
+              }`}
+            >
+              Training
+            </button>
+          </div>
+        </div>
       </div>
 
+      {/* Carousel */}
       <div className="relative w-full max-w-7xl mx-auto overflow-hidden">
         {/* Cards wrapper */}
         <div
+          key={activeTab} // re-render with animation
           className="flex transition-transform duration-500 ease-in-out"
           style={{
             transform: `translateX(-${(index * 100) / cardsPerView}%)`,
@@ -122,7 +134,7 @@ export default function Services() {
         {index > 0 && (
           <button
             onClick={prevSlide}
-            className="absolute top-1/2 -translate-y-1/2 left-4 bg-slate-800 text-white p-3 rounded-full shadow hover:bg-gray-700"
+            className="absolute top-1/2 -translate-y-1/2 left-4 bg-gray-800 text-white p-3 rounded-full shadow hover:bg-gray-700"
           >
             <ChevronLeft size={28} />
           </button>
@@ -132,7 +144,7 @@ export default function Services() {
         {index < cards.length - cardsPerView && (
           <button
             onClick={nextSlide}
-            className="absolute top-1/2 -translate-y-1/2 right-4 bg-slate-800 text-white p-3 rounded-full shadow hover:bg-gray-700"
+            className="absolute top-1/2 -translate-y-1/2 right-4 bg-gray-800 text-white p-3 rounded-full shadow hover:bg-gray-700"
           >
             <ChevronRight size={28} />
           </button>

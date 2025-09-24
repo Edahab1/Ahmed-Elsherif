@@ -98,19 +98,6 @@ export default function Navbar() {
                 </li>
               )
             )}
-            <li>
-              <div className="flex justify-center space-x-2 text-2xl cursor-pointer">
-                <a href="https://www.youtube.com">
-                  <i className="fa-brands fa-youtube text-red-600"></i>
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/ahmed-el-sherif%E2%94%82cmrp-%C2%AE%E2%94%82crl-%C2%AE%E2%94%82cama2-%C2%AE%E2%94%82asu%E2%80%93li%C2%AE%E2%94%82bmi%C2%AE%E2%94%82tot%C2%AE-2010b3121/"
-                  target="_blank"
-                >
-                  <i className="fa-brands fa-linkedin text-blue-600"></i>
-                </a>
-              </div>
-            </li>
           </ul>
         </div>
       </div>
