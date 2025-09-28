@@ -54,6 +54,11 @@ const About = () => {
                 <h4 className="font-semibold text-blue-700">Experience</h4>
                 <p className="text-sm">* 17+ Years in Mechanical Maintenance & Reliability</p>
               </div>
+
+              <div className="bg-white p-4 rounded-lg shadow-sm">
+                <h4 className="font-semibold text-blue-700">Technical Events</h4>
+                <p className="text-sm">* 16 Event</p>
+              </div>
             </div>
           </div>
           <div>

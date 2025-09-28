@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
-import logo from "/Elsherif logo.png";
+import logoLight from "/logo light.png"
+import logoDark from "/logo dark.png";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -40,7 +41,7 @@ export default function Navbar() {
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         {/* Logo */}
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src={logo} className="h-10 md:h-8" alt="Logo" />
+          {/* <img src={logo} className="h-10 md:h-8 text-white bg-white" alt="Logo" /> */}
           <span
             className={`hidden md:block self-center text-2xl font-semibold whitespace-nowrap transition-colors duration-500
               ${scrolled ? "text-gray-900 dark:text-white" : "text-white"}`}

@@ -1,32 +1,55 @@
 import { useState, useEffect } from "react";
 import { Element } from "react-scroll";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import img1 from "/Asset Reliability.png";
-import img2 from "/CMRP.jpg";
-import img3 from "/engineering design.jpg";
-import img4 from "/CMRP.jpg";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 export default function Services() {
   const consultationCards = [
-    { id: 1, title: "Asset Reliability", img: img1 },
-    { id: 2, title: "Engineering Design", img: img3 },
-    { id: 3, title: "Extra Consultation", img: img4 },
+    { title: "ISO 55000 Compliance", img: "/images/iso.jpg" },
+    { title: "Strategic Asset Management Planning (SAMP)", img: "/images/samp.jpg" },
+    { title: "Reliability Strategy Development", img: "/images/reliability.jpg" },
+    { title: "Reliability Centered Maintenance (RCM)", img: "/images/rcm.jpg" },
+    { title: "Asset Criticality Analysis & Lifecycle Planning", img: "/images/criticality.jpg" },
+    { title: "RAM Analysis & Reliability Block Diagrams (RBD)", img: "/images/ram.jpg" },
+    { title: "Asset Lifecycle Planning", img: "/images/lifecycle.jpg" },
+    { title: "Failure Modes & Effects Analysis (FMEA) & Root Cause Analysis (RCA)", img: "/images/fmea.jpg" },
+    { title: "Maintenance Auditing & Benchmarking", img: "/images/audit.jpg" },
+    { title: "Workforce Engagement & Reliability Culture", img: "/images/workforce.jpg" },
+    { title: "SAP PM Implementation & Optimization", img: "/images/sap.jpg" },
+    { title: "Reliability & Asset Integrity Solution Selection", img: "/images/solution.jpg" },
+    { title: "Asset Performance Management (APM) Solutions as a Service", img: "/images/apm.jpg" },
+    { title: "Spare Parts & Inventory Optimization", img: "/images/spare.jpg" },
+    { title: "Turnaround & Shutdown Management", img: "/images/turnaround.jpg" },
+    { title: "Digital Transformation in Maintenance", img: "/images/digital.jpg" },
+    { title: "Predictive & Condition-Based Maintenance (PdM/CBM)", img: "/images/pdm.jpg" },
+    { title: "KPI Development & Performance Management", img: "/images/kpi.jpg" },
   ];
 
   const trainingCards = [
-    { id: 4, title: "CMRP Certification", img: img2 },
-    { id: 5, title: "Advanced Training", img: img3 },
-    { id: 6, title: "Workshops", img: img1 },
+    { title: "CMRP Certificate Exam Preparation", img: "/images/cmrp.jpg" },
+    { title: "CAMA Certificate Exam Preparation", img: "/images/cama.jpg" },
+    { title: "CMRT Certificate Exam Preparation", img: "/images/cmrt.jpg" },
+    { title: "RCM (Reliability Centered Maintenance)", img: "/images/rcm-training.jpg" },
+    { title: "RCA & RCFA", img: "/images/rca.jpg" },
+    { title: "RELM (Reliability Excellence & Leadership Masterclass)", img: "/images/relm.jpg" },
+    { title: "Maintenance Auditing and Benchmarking", img: "/images/audit-training.jpg" },
+    { title: "Fundamentals of Reliability Engineering", img: "/images/fundamentals.jpg" },
+    { title: "TPM (Total Productive Maintenance)", img: "/images/tpm.jpg" },
+    { title: "Influence Reliability Management", img: "/images/influence.jpg" },
+    { title: "Machinery Failure Analysis & Prevention", img: "/images/machinery.jpg" },
+    { title: "Reliability & Maintenance Engineering FMEA", img: "/images/fmea-training.jpg" },
+    { title: "Understanding ISO 55000", img: "/images/iso-training.jpg" },
+    { title: "Asset Management Standard", img: "/images/standard.jpg" },
+    { title: "Lean Management Tools Workshop", img: "/images/lean.jpg" },
   ];
 
   const [activeTab, setActiveTab] = useState("consultation");
   const [index, setIndex] = useState(0);
   const [cardsPerView, setCardsPerView] = useState(3);
+  const [showModal, setShowModal] = useState(false);
 
-  const cards =
-    activeTab === "consultation" ? consultationCards : trainingCards;
+  const cards = activeTab === "consultation" ? consultationCards : trainingCards;
 
-  // Adjust cards per view based on screen size
+  // Responsive card per view
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 640) {
@@ -36,9 +59,8 @@ export default function Services() {
       } else {
         setCardsPerView(3);
       }
-      setIndex(0); // reset slide on resize
+      setIndex(0);
     };
-
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -59,12 +81,12 @@ export default function Services() {
     >
       <h2 className="text-4xl font-bold mb-10 text-gray-800">Our Services</h2>
 
-      {/* Switch Toggle */}
+      {/* Toggle Switch */}
       <div className="flex items-center justify-center mb-10">
-        <div className="relative w-72 h-12 bg-gray-300 rounded-full flex items-center cursor-pointer">
-          {/* Sliding background */}
+        <div className="relative w-72 h-12 bg-gray-300 rounded-full flex items-center cursor-pointer overflow-hidden">
+          {/* Active background */}
           <div
-            className={`absolute top-1 left-1 h-10 w-1/2 bg-cyan-500 rounded-full shadow-md transform transition-transform duration-500 ease-in-out ${
+            className={`absolute top-0 left-0 h-full w-1/2 bg-cyan-500 rounded-full shadow-md transform transition-transform duration-500 ease-in-out ${
               activeTab === "training" ? "translate-x-full" : ""
             }`}
           />
@@ -76,9 +98,7 @@ export default function Services() {
                 setIndex(0);
               }}
               className={`w-1/2 text-center font-medium transition-colors ${
-                activeTab === "consultation"
-                  ? "text-white"
-                  : "text-gray-700"
+                activeTab === "consultation" ? "text-white" : "text-gray-700"
               }`}
             >
               Consultation
@@ -89,9 +109,7 @@ export default function Services() {
                 setIndex(0);
               }}
               className={`w-1/2 text-center font-medium transition-colors ${
-                activeTab === "training"
-                  ? "text-white"
-                  : "text-gray-700"
+                activeTab === "training" ? "text-white" : "text-gray-700"
               }`}
             >
               Training
@@ -102,35 +120,39 @@ export default function Services() {
 
       {/* Carousel */}
       <div className="relative w-full max-w-7xl mx-auto overflow-hidden">
-        {/* Cards wrapper */}
         <div
-          key={activeTab} // re-render with animation
+          key={activeTab}
           className="flex transition-transform duration-500 ease-in-out"
-          style={{
-            transform: `translateX(-${(index * 100) / cardsPerView}%)`,
-          }}
+          style={{ transform: `translateX(-${(index * 100) / cardsPerView}%)` }}
         >
-          {cards.map((card) => (
+          {cards.map((card, i) => (
             <div
-              key={card.id}
+              key={i}
               className="flex-shrink-0 px-4"
               style={{ width: `${100 / cardsPerView}%` }}
             >
-              <div className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-6 h-96 flex flex-col justify-center items-center">
-                <img
-                  src={card.img}
-                  alt={card.title}
-                  className="h-48 w-full object-cover rounded-xl mb-4"
-                />
-                <h3 className="text-2xl font-semibold text-gray-700">
-                  {card.title}
-                </h3>
+              <div className="relative h-64 rounded-2xl shadow-xl overflow-hidden group">
+                {/* Background Image */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${card.img})` }}
+                ></div>
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition"></div>
+
+                {/* Title */}
+                <div className="relative z-10 flex items-center justify-center h-full">
+                  <h3 className="text-xl font-semibold text-white text-center px-2">
+                    {card.title}
+                  </h3>
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Left arrow */}
+        {/* Navigation Arrows */}
         {index > 0 && (
           <button
             onClick={prevSlide}
@@ -139,8 +161,6 @@ export default function Services() {
             <ChevronLeft size={28} />
           </button>
         )}
-
-        {/* Right arrow */}
         {index < cards.length - cardsPerView && (
           <button
             onClick={nextSlide}
@@ -150,6 +170,51 @@ export default function Services() {
           </button>
         )}
       </div>
+
+      {/* View All Button */}
+      <button
+        onClick={() => setShowModal(true)}
+        className="mt-10 px-6 py-3 bg-cyan-600 text-white rounded-xl shadow hover:bg-cyan-700"
+      >
+        {activeTab === "consultation"
+          ? "View All Consultation"
+          : "View All Training"}
+      </button>
+
+      {/* Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <div className="bg-white w-11/12 md:w-3/4 lg:w-1/2 rounded-2xl shadow-xl p-6 relative max-h-[80vh] overflow-y-auto">
+            {/* Close Button */}
+            <button
+              onClick={() => setShowModal(false)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
+            >
+              <X size={24} />
+            </button>
+
+            {/* Title with Dynamic Count */}
+            <h3 className="text-2xl font-bold text-gray-800 mb-6">
+              {activeTab === "consultation"
+                ? "Consultation Services"
+                : "Training Services"}{" "}
+              ({cards.length})
+            </h3>
+
+            {/* Service List */}
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {cards.map((card, i) => (
+                <li
+                  key={i}
+                  className="p-3 bg-gray-100 rounded-lg shadow-sm hover:bg-gray-200 transition"
+                >
+                  {card.title}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
     </Element>
   );
 }
