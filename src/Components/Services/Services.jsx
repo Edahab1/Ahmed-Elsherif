@@ -4,39 +4,90 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 export default function Services() {
   const consultationCards = [
-    { title: "ISO 55000 Compliance", img: "/images/iso.jpg" },
-    { title: "Strategic Asset Management Planning (SAMP)", img: "/images/samp.jpg" },
-    { title: "Reliability Strategy Development", img: "/images/reliability.jpg" },
+    { title: "ISO 55000 Compliance", img: "/Services/gearpic.jpg" },
+    { title: "Reliability Strategy Development",
+      img: "/Services/RSD.jpg",
+    },
+    { title: "Strategic Asset Management Planning", img: "/Services/SAMP.jpg" },
     { title: "Reliability Centered Maintenance (RCM)", img: "/images/rcm.jpg" },
-    { title: "Asset Criticality Analysis & Lifecycle Planning", img: "/images/criticality.jpg" },
-    { title: "RAM Analysis & Reliability Block Diagrams (RBD)", img: "/images/ram.jpg" },
+    {
+      title: "Asset Criticality Analysis & Lifecycle Planning",
+      img: "/images/criticality.jpg",
+    },
+    {
+      title: "RAM Analysis & Reliability Block Diagrams (RBD)",
+      img: "/images/ram.jpg",
+    },
     { title: "Asset Lifecycle Planning", img: "/images/lifecycle.jpg" },
-    { title: "Failure Modes & Effects Analysis (FMEA) & Root Cause Analysis (RCA)", img: "/images/fmea.jpg" },
+    {
+      title:
+        "Failure Modes & Effects Analysis (FMEA) & Root Cause Analysis (RCA)",
+      img: "/images/fmea.jpg",
+    },
     { title: "Maintenance Auditing & Benchmarking", img: "/images/audit.jpg" },
-    { title: "Workforce Engagement & Reliability Culture", img: "/images/workforce.jpg" },
+    {
+      title: "Workforce Engagement & Reliability Culture",
+      img: "/images/workforce.jpg",
+    },
     { title: "SAP PM Implementation & Optimization", img: "/images/sap.jpg" },
-    { title: "Reliability & Asset Integrity Solution Selection", img: "/images/solution.jpg" },
-    { title: "Asset Performance Management (APM) Solutions as a Service", img: "/images/apm.jpg" },
+    {
+      title: "Reliability & Asset Integrity Solution Selection",
+      img: "/images/solution.jpg",
+    },
+    {
+      title: "Asset Performance Management (APM) Solutions as a Service",
+      img: "/images/apm.jpg",
+    },
     { title: "Spare Parts & Inventory Optimization", img: "/images/spare.jpg" },
-    { title: "Turnaround & Shutdown Management", img: "/images/turnaround.jpg" },
-    { title: "Digital Transformation in Maintenance", img: "/images/digital.jpg" },
-    { title: "Predictive & Condition-Based Maintenance (PdM/CBM)", img: "/images/pdm.jpg" },
-    { title: "KPI Development & Performance Management", img: "/images/kpi.jpg" },
+    {
+      title: "Turnaround & Shutdown Management",
+      img: "/images/turnaround.jpg",
+    },
+    {
+      title: "Digital Transformation in Maintenance",
+      img: "/images/digital.jpg",
+    },
+    {
+      title: "Predictive & Condition-Based Maintenance (PdM/CBM)",
+      img: "/images/pdm.jpg",
+    },
+    {
+      title: "KPI Development & Performance Management",
+      img: "/images/kpi.jpg",
+    },
   ];
 
   const trainingCards = [
     { title: "CMRP Certificate Exam Preparation", img: "/images/cmrp.jpg" },
     { title: "CAMA Certificate Exam Preparation", img: "/images/cama.jpg" },
     { title: "CMRT Certificate Exam Preparation", img: "/images/cmrt.jpg" },
-    { title: "RCM (Reliability Centered Maintenance)", img: "/images/rcm-training.jpg" },
+    {
+      title: "RCM (Reliability Centered Maintenance)",
+      img: "/images/rcm-training.jpg",
+    },
     { title: "RCA & RCFA", img: "/images/rca.jpg" },
-    { title: "RELM (Reliability Excellence & Leadership Masterclass)", img: "/images/relm.jpg" },
-    { title: "Maintenance Auditing and Benchmarking", img: "/images/audit-training.jpg" },
-    { title: "Fundamentals of Reliability Engineering", img: "/images/fundamentals.jpg" },
+    {
+      title: "RELM (Reliability Excellence & Leadership Masterclass)",
+      img: "/images/relm.jpg",
+    },
+    {
+      title: "Maintenance Auditing and Benchmarking",
+      img: "/images/audit-training.jpg",
+    },
+    {
+      title: "Fundamentals of Reliability Engineering",
+      img: "/images/fundamentals.jpg",
+    },
     { title: "TPM (Total Productive Maintenance)", img: "/images/tpm.jpg" },
     { title: "Influence Reliability Management", img: "/images/influence.jpg" },
-    { title: "Machinery Failure Analysis & Prevention", img: "/images/machinery.jpg" },
-    { title: "Reliability & Maintenance Engineering FMEA", img: "/images/fmea-training.jpg" },
+    {
+      title: "Machinery Failure Analysis & Prevention",
+      img: "/images/machinery.jpg",
+    },
+    {
+      title: "Reliability & Maintenance Engineering FMEA",
+      img: "/images/fmea-training.jpg",
+    },
     { title: "Understanding ISO 55000", img: "/images/iso-training.jpg" },
     { title: "Asset Management Standard", img: "/images/standard.jpg" },
     { title: "Lean Management Tools Workshop", img: "/images/lean.jpg" },
@@ -47,7 +98,8 @@ export default function Services() {
   const [cardsPerView, setCardsPerView] = useState(3);
   const [showModal, setShowModal] = useState(false);
 
-  const cards = activeTab === "consultation" ? consultationCards : trainingCards;
+  const cards =
+    activeTab === "consultation" ? consultationCards : trainingCards;
 
   // Responsive card per view
   useEffect(() => {
@@ -131,21 +183,16 @@ export default function Services() {
               className="flex-shrink-0 px-4"
               style={{ width: `${100 / cardsPerView}%` }}
             >
-              <div className="relative h-64 rounded-2xl shadow-xl overflow-hidden group">
-                {/* Background Image */}
+              <div className="flex flex-col h-64 rounded-2xl shadow-xl overflow-hidden bg-white">
+                {/* Image Section */}
                 <div
-                  className="absolute inset-0 bg-cover bg-center"
+                  className="flex-grow bg-cover bg-center"
                   style={{ backgroundImage: `url(${card.img})` }}
                 ></div>
 
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition"></div>
-
-                {/* Title */}
-                <div className="relative z-10 flex items-center justify-center h-full">
-                  <h3 className="text-xl font-semibold text-white text-center px-2">
-                    {card.title}
-                  </h3>
+                {/* Title Section */}
+                <div className="bg-cyan-600 text-white text-center py-3 px-2">
+                  <h3 className="text-lg font-medium">{card.title}</h3>
                 </div>
               </div>
             </div>
