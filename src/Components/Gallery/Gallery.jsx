@@ -34,7 +34,7 @@ const Gallery = () => {
   ];
 
   return (
-    <section id="events" className="py-20 px-4 bg-gray-50">
+    <section id="events" className="py-20 px-4 bg-gray-100">
       {" "}
       <div className="container mx-auto max-w-7xl">
         {" "}

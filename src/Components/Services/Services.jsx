@@ -5,92 +5,41 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 export default function Services() {
   const consultationCards = [
     { title: "ISO 55000 Compliance", img: "/Services/gearpic.jpg" },
-    { title: "Reliability Strategy Development",
-      img: "/Services/RSD.jpg",
-    },
+    { title: "Reliability Strategy Development", img: "/Services/RSD.jpg" },
     { title: "Strategic Asset Management Planning", img: "/Services/SAMP.jpg" },
-    { title: "Reliability Centered Maintenance (RCM)", img: "/images/rcm.jpg" },
-    {
-      title: "Asset Criticality Analysis & Lifecycle Planning",
-      img: "/images/criticality.jpg",
-    },
-    {
-      title: "RAM Analysis & Reliability Block Diagrams (RBD)",
-      img: "/images/ram.jpg",
-    },
-    { title: "Asset Lifecycle Planning", img: "/images/lifecycle.jpg" },
-    {
-      title:
-        "Failure Modes & Effects Analysis (FMEA) & Root Cause Analysis (RCA)",
-      img: "/images/fmea.jpg",
-    },
-    { title: "Maintenance Auditing & Benchmarking", img: "/images/audit.jpg" },
-    {
-      title: "Workforce Engagement & Reliability Culture",
-      img: "/images/workforce.jpg",
-    },
-    { title: "SAP PM Implementation & Optimization", img: "/images/sap.jpg" },
-    {
-      title: "Reliability & Asset Integrity Solution Selection",
-      img: "/images/solution.jpg",
-    },
-    {
-      title: "Asset Performance Management (APM) Solutions as a Service",
-      img: "/images/apm.jpg",
-    },
-    { title: "Spare Parts & Inventory Optimization", img: "/images/spare.jpg" },
-    {
-      title: "Turnaround & Shutdown Management",
-      img: "/images/turnaround.jpg",
-    },
-    {
-      title: "Digital Transformation in Maintenance",
-      img: "/images/digital.jpg",
-    },
-    {
-      title: "Predictive & Condition-Based Maintenance (PdM/CBM)",
-      img: "/images/pdm.jpg",
-    },
-    {
-      title: "KPI Development & Performance Management",
-      img: "/images/kpi.jpg",
-    },
+    { title: "Reliability Centered Maintenance (RCM)", img: "/Services/RCM.png" },
+    { title: "Asset Criticality Analysis & Lifecycle Planning", img: "/Services/criticality.jpg" },
+    { title: "RAM Analysis & Reliability Block Diagrams (RBD)", img: "/Services/ram.jpg" },
+    { title: "Asset Lifecycle Planning", img: "/Services/lifecycle.jpg" },
+    { title: "Failure Modes & Effects Analysis (FMEA) & Root Cause Analysis (RCA)", img: "/Services/fmea.jpg" },
+    { title: "Maintenance Auditing & Benchmarking", img: "/Services/audit.jpg" },
+    { title: "Workforce Engagement & Reliability Culture", img: "/Services/workforce.jpg" },
+    { title: "SAP PM Implementation & Optimization", img: "/Services/sap.jpg" },
+    { title: "Reliability & Asset Integrity Solution Selection", img: "/Services/solution.jpg" },
+    { title: "Asset Performance Management (APM) Solutions as a Service", img: "/Services/apm.jpg" },
+    { title: "Spare Parts & Inventory Optimization", img: "/Services/spare.jpg" },
+    { title: "Turnaround & Shutdown Management", img: "/Services/turnaround.jpg" },
+    { title: "Digital Transformation in Maintenance", img: "/Services/digital.jpg" },
+    { title: "Predictive & Condition-Based Maintenance (PdM/CBM)", img: "/Services/pdm.jpg" },
+    { title: "KPI Development & Performance Management", img: "/Services/kpi.jpg" },
   ];
 
   const trainingCards = [
-    { title: "CMRP Certificate Exam Preparation", img: "/images/cmrp.jpg" },
-    { title: "CAMA Certificate Exam Preparation", img: "/images/cama.jpg" },
-    { title: "CMRT Certificate Exam Preparation", img: "/images/cmrt.jpg" },
-    {
-      title: "RCM (Reliability Centered Maintenance)",
-      img: "/images/rcm-training.jpg",
-    },
-    { title: "RCA & RCFA", img: "/images/rca.jpg" },
-    {
-      title: "RELM (Reliability Excellence & Leadership Masterclass)",
-      img: "/images/relm.jpg",
-    },
-    {
-      title: "Maintenance Auditing and Benchmarking",
-      img: "/images/audit-training.jpg",
-    },
-    {
-      title: "Fundamentals of Reliability Engineering",
-      img: "/images/fundamentals.jpg",
-    },
-    { title: "TPM (Total Productive Maintenance)", img: "/images/tpm.jpg" },
-    { title: "Influence Reliability Management", img: "/images/influence.jpg" },
-    {
-      title: "Machinery Failure Analysis & Prevention",
-      img: "/images/machinery.jpg",
-    },
-    {
-      title: "Reliability & Maintenance Engineering FMEA",
-      img: "/images/fmea-training.jpg",
-    },
-    { title: "Understanding ISO 55000", img: "/images/iso-training.jpg" },
-    { title: "Asset Management Standard", img: "/images/standard.jpg" },
-    { title: "Lean Management Tools Workshop", img: "/images/lean.jpg" },
+    { title: "CMRP Certificate Exam Preparation", img: "/Services/cmrp.jpg" },
+    { title: "CAMA Certificate Exam Preparation", img: "/Services/cama.jpg" },
+    { title: "CMRT Certificate Exam Preparation", img: "/Services/cmrt.jpg" },
+    { title: "RCM (Reliability Centered Maintenance)", img: "/Services/rcm-training.jpg" },
+    { title: "RCA & RCFA", img: "/Services/rca.jpg" },
+    { title: "RELM (Reliability Excellence & Leadership Masterclass)", img: "/Services/relm.jpg" },
+    { title: "Maintenance Auditing and Benchmarking", img: "/Services/audit-training.jpg" },
+    { title: "Fundamentals of Reliability Engineering", img: "/Services/fundamentals.jpg" },
+    { title: "TPM (Total Productive Maintenance)", img: "/Services/tpm.jpg" },
+    { title: "Influence Reliability Management", img: "/Services/influence.jpg" },
+    { title: "Machinery Failure Analysis & Prevention", img: "/Services/machinery.jpg" },
+    { title: "Reliability & Maintenance Engineering FMEA", img: "/Services/fmea-training.jpg" },
+    { title: "Understanding ISO 55000", img: "/Services/iso-training.jpg" },
+    { title: "Asset Management Standard", img: "/Services/standard.jpg" },
+    { title: "Lean Management Tools Workshop", img: "/Services/lean.jpg" },
   ];
 
   const [activeTab, setActiveTab] = useState("consultation");
@@ -98,10 +47,8 @@ export default function Services() {
   const [cardsPerView, setCardsPerView] = useState(3);
   const [showModal, setShowModal] = useState(false);
 
-  const cards =
-    activeTab === "consultation" ? consultationCards : trainingCards;
+  const cards = activeTab === "consultation" ? consultationCards : trainingCards;
 
-  // Responsive card per view
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 640) {
@@ -119,11 +66,19 @@ export default function Services() {
   }, []);
 
   const nextSlide = () => {
-    if (index < cards.length - cardsPerView) setIndex(index + 1);
+    if (index < cards.length - cardsPerView) {
+      setIndex(index + cardsPerView);  // Move forward
+    } else {
+      setIndex(0);  // Restart from the first card set
+    }
   };
 
   const prevSlide = () => {
-    if (index > 0) setIndex(index - 1);
+    if (index > 0) {
+      setIndex(index - cardsPerView);  // Move backward
+    } else {
+      setIndex(cards.length - cardsPerView);  // Go to the last card set
+    }
   };
 
   return (
@@ -136,13 +91,11 @@ export default function Services() {
       {/* Toggle Switch */}
       <div className="flex items-center justify-center mb-10">
         <div className="relative w-72 h-12 bg-gray-300 rounded-full flex items-center cursor-pointer overflow-hidden">
-          {/* Active background */}
           <div
             className={`absolute top-0 left-0 h-full w-1/2 bg-cyan-500 rounded-full shadow-md transform transition-transform duration-500 ease-in-out ${
               activeTab === "training" ? "translate-x-full" : ""
             }`}
           />
-          {/* Options */}
           <div className="flex w-full z-10">
             <button
               onClick={() => {
@@ -186,7 +139,7 @@ export default function Services() {
               <div className="flex flex-col h-64 rounded-2xl shadow-xl overflow-hidden bg-white">
                 {/* Image Section */}
                 <div
-                  className="flex-grow bg-cover bg-center"
+                  className="flex-grow bg-cover bg-no-repeat"
                   style={{ backgroundImage: `url(${card.img})` }}
                 ></div>
 
@@ -218,14 +171,25 @@ export default function Services() {
         )}
       </div>
 
+      {/* Slider Indicators */}
+      <div className="mt-6 flex justify-center items-center space-x-2">
+        {Array.from({ length: Math.ceil(cards.length / cardsPerView) }).map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setIndex(i * cardsPerView)}  // Adjust to multiple of 3 (cardsPerView)
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              i * cardsPerView === index ? "bg-cyan-600 scale-125" : "bg-gray-400"
+            }`}
+          />
+        ))}
+      </div>
+
       {/* View All Button */}
       <button
         onClick={() => setShowModal(true)}
         className="mt-10 px-6 py-3 bg-cyan-600 text-white rounded-xl shadow hover:bg-cyan-700"
       >
-        {activeTab === "consultation"
-          ? "View All Consultation"
-          : "View All Training"}
+        {activeTab === "consultation" ? "View All Consultation" : "View All Training"}
       </button>
 
       {/* Modal */}
@@ -242,10 +206,7 @@ export default function Services() {
 
             {/* Title with Dynamic Count */}
             <h3 className="text-2xl font-bold text-gray-800 mb-6">
-              {activeTab === "consultation"
-                ? "Consultation Services"
-                : "Training Services"}{" "}
-              ({cards.length})
+              {activeTab === "consultation" ? "Consultation Services" : "Training Services"} ({cards.length})
             </h3>
 
             {/* Service List */}
