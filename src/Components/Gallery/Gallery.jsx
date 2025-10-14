@@ -9,26 +9,32 @@ const Gallery = () => {
   const images = [
     {
       src: img1,
+      title: "Siemens Training Session",
       alt: "Attending reliability engineering conference with industry experts",
     },
     {
       src: img2,
+      title: "UK Reliability Conference",
       alt: "Conducting hands-on training workshop for maintenance team",
     },
     {
       src: img3,
+      title: "Abu Dhabi Training Workshop",
       alt: "Performing equipment inspection at industrial facility",
     },
     {
       src: img4,
+      title: "Saudi Arabia Training Program",
       alt: "Collaborative team meeting discussing reliability improvements",
     },
     {
       src: img5,
+      title: "India Training Seminar",
       alt: "Delivering technical presentation on predictive maintenance",
     },
     {
       src: img6,
+      title: "Oman Training Course",
       alt: "Receiving reliability engineering certification award",
     },
   ];
@@ -43,7 +49,7 @@ const Gallery = () => {
         </h2>{" "}
         <p className="text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto">
           {" "}
-          Events, trainings, and conferences that showcase my professional
+          Events, trainings, and conferences that showcase my
           journey in reliability engineering{" "}
         </p>{" "}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -61,7 +67,7 @@ const Gallery = () => {
               />{" "}
               <div className="p-4 bg-white">
                 {" "}
-                <p className="text-sm text-gray-600">{image.alt}</p>{" "}
+                <p className="font-bold text-center text-gray-600">{image.title}</p>{" "}
               </div>{" "}
             </div>
           ))}{" "}
