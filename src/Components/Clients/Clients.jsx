@@ -4,16 +4,25 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // Dynamic clients data
 const clients = [
-  { name: "Aramco Saudi", logo: "/Logo/aramco.png" },
-  { name: "ADNOC", logo: "/Logo/ADNOC.png" },
-  { name: "ENGIE", logo: "/Logo/ENGIE.png" },
-  { name: "CAIRN", logo: "/Logo/CAIRN.png" },
-  { name: "rekeep", logo: "/Logo/rekeep.png" },
-  { name: "Cipla", logo: "/Logo/Cipla.png" },
-  { name: "OQGN", logo: "/Logo/OQGN.png" },
-  { name: "Petromaint", logo: "/Logo/Petromaint.png" },
-  { name: "SOYVEN", logo: "/Logo/SOYVEN.png" },
-  { name: "SEIL", logo: "/Logo/SEIL.png" },
+  { name: "Aramco Saudi", logo: "/Clients/aramco.png" },
+  { name: "ADNOC", logo: "/Clients/ADNOC.png" },
+  { name: "ENGIE", logo: "/Clients/ENGIE.png" },
+  { name: "CAIRN", logo: "/Clients/CAIRN.png" },
+  { name: "rekeep", logo: "/Clients/rekeep.png" },
+  { name: "Cipla", logo: "/Clients/Cipla.png" },
+  { name: "OQGN", logo: "/Clients/OQGN.png" },
+  { name: "Petromaint", logo: "/Clients/Petromaint.png" },
+  { name: "SOYVEN", logo: "/Clients/SOYVEN.png" },
+  { name: "SEIL", logo: "/Clients/SEIL.png" },
+  { name: "YASREF", logo: "/Clients/YASREF.png" },
+  { name: "Satorp", logo: "/Clients/satorp.jpg" },
+  { name: "ASORC", logo: "/Clients/ASORC.jpg" },
+  { name: "ANRPC", logo: "/Clients/ANRPC.jpg" },
+  { name: "PMS", logo: "/Clients/PMS.png" },
+  { name: "SUMED", logo: "/Clients/SUMED.jpg" },
+  { name: "Petro Oman", logo: "/Clients/Petro Oman.jpg" },
+  { name: "ENPPI", logo: "/Clients/ENPPI.png" },
+  { name: "BP", logo: "/Clients/BP.png" },
 ];
 
 export default function OurClients() {

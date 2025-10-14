@@ -1,26 +1,32 @@
 import { Element } from 'react-scroll';
 import emailjs from '@emailjs/browser';
 import toast, { Toaster } from 'react-hot-toast';
+import { useState } from 'react';
 
 export default function Contact() {
+  const [isSending, setIsSending] = useState(false);
+
   const sendEmail = (e) => {
     e.preventDefault();
+    setIsSending(true);
 
     emailjs
       .sendForm(
-        'YOUR_SERVICE_ID',   // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID',  // Replace with your EmailJS template ID
+        'service_2zhxwj6',        // ✅ Replace with your actual Service ID from EmailJS
+        'template_mh2ewdf',       // ✅ Replace with your Template ID from EmailJS
         e.target,
-        'YOUR_USER_ID'       // Replace with your EmailJS user ID (public key)
+        'rrT1NJ0HyqWAkHCOX'   // ✅ Replace with your Public Key from EmailJS
       )
       .then(
         (result) => {
           toast.success('Message has been sent successfully!');
           e.target.reset();
+          setIsSending(false);
         },
         (error) => {
           toast.error('Failed to send message. Please try again.');
           console.error(error.text);
+          setIsSending(false);
         }
       );
   };
@@ -36,9 +42,7 @@ export default function Contact() {
         reverseOrder={false}
         toastOptions={{
           duration: 4000,
-          style: {
-            fontSize: '16px',
-          },
+          style: { fontSize: '16px' },
         }}
       />
 
@@ -98,15 +102,20 @@ export default function Contact() {
               rows={6}
               className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-gray-900 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
               placeholder="Leave a comment..."
-              defaultValue={''}
-            />
+              required
+            ></textarea>
           </div>
 
           <button
             type="submit"
-            className="w-full sm:w-auto rounded-lg bg-blue-600 px-6 py-3 text-white text-sm font-semibold shadow-md hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none transition duration-200"
+            disabled={isSending}
+            className={`w-full sm:w-auto rounded-lg px-6 py-3 text-white text-sm font-semibold shadow-md focus:ring-4 focus:outline-none transition duration-200 ${
+              isSending
+                ? 'bg-gray-400 cursor-not-allowed'
+                : 'bg-blue-600 hover:bg-blue-700 focus:ring-blue-300'
+            }`}
           >
-            Send Message
+            {isSending ? 'Sending...' : 'Send Message'}
           </button>
         </form>
       </div>

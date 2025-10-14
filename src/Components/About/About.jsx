@@ -20,24 +20,19 @@ const About = () => {
               eliminate chronic failures, and build more resilient,
               high-performing systems.
             </p>
-            <p>
-              <h4 className="border-b-4 pb-2 text-blue-700 font-semibold">Key impact Areas</h4>
-              <ul  className="text-sm text-gray-700 mt-2 mb-6 list-disc list-inside">
-                <li>
-                  Reduce maintenance and operational costs by up to 30%
-                </li>
-                <li>Minimize unplanned downtime and production losses</li>
-                <li>
-                  Extend asset life cycles and improve ROI on capital
-                  equipment
-                </li>
-                <li>Optimize spare parts usage and inventory costs </li>
-                <li>
-                  Eliminate recurring failures through root cause &
-                  criticality analysis
-                </li>
-              </ul>
-            </p>
+            <div>
+  <h4 className="border-b-4 pb-2 text-blue-700 font-semibold">
+    Key Impact Areas
+  </h4>
+  <ul className="text-sm text-gray-700 mt-2 mb-6 list-disc list-inside">
+    <li>Reduce maintenance and operational costs by up to 30%</li>
+    <li>Minimize unplanned downtime and production losses</li>
+    <li>Extend asset life cycles and improve ROI on capital equipment</li>
+    <li>Optimize spare parts usage and inventory costs</li>
+    <li>Eliminate recurring failures through root cause & criticality analysis</li>
+  </ul>
+</div>
+
 
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-white p-4 rounded-lg shadow-sm ">
