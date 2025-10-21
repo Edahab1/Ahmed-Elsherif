@@ -2,44 +2,41 @@ import { useState, useEffect } from "react";
 import { Element } from "react-scroll";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
+
 export default function Services() {
   const consultationCards = [
-    { title: "ISO 55000 Compliance", img: "/Services/gearpic.jpg" },
+    { title: "Asset Managemnet Gap Analysis", img: "/Services/asset-management-gap-analysis.jpg" },
+    { title: "Reliability Centered Maintenance (RCM)", img: "/Services/RCM.jpg" },
     { title: "Reliability Strategy Development", img: "/Services/RSD.jpg" },
     { title: "Strategic Asset Management Planning", img: "/Services/SAMP.jpg" },
-    { title: "Reliability Centered Maintenance (RCM)", img: "/Services/RCM.png" },
-    { title: "Asset Criticality Analysis & Lifecycle Planning", img: "/Services/Criticality.png" },
-    { title: "RAM Analysis & Reliability Block Diagrams", img: "/Services/ram.jpg" },
-    { title: "Asset Lifecycle Planning", img: "/Services/lifecycle.jpg" },
-    { title: "Failure Modes & Effects Analysis & Root Cause Analysis", img: "/Services/fmea.jpg" },
-    { title: "Maintenance Auditing & Benchmarking", img: "/Services/audit.jpg" },
-    { title: "Workforce Engagement & Reliability Culture", img: "/Services/workforce.jpg" },
-    { title: "SAP PM Implementation & Optimization", img: "/Services/sap.jpg" },
-    { title: "Reliability & Asset Integrity Solution Selection", img: "/Services/solution.jpg" },
-    { title: "Asset Performance Management (APM) Solutions as a Service", img: "/Services/apm.jpg" },
-    { title: "Spare Parts & Inventory Optimization", img: "/Services/spare.jpg" },
-    { title: "Turnaround & Shutdown Management", img: "/Services/turnaround.jpg" },
-    { title: "Digital Transformation in Maintenance", img: "/Services/digital.jpg" },
-    { title: "Predictive & Condition-Based Maintenance (PdM/CBM)", img: "/Services/pdm.jpg" },
-    { title: "KPI Development & Performance Management", img: "/Services/kpi.jpg" },
+    { title: "Asset Criticality Assessment", img: "/Services/asset-criticality-assessment.jpg" }, 
+    { title: "RAM Analysis & Reliability Block Diagrams", img: "/Services/RAM-analysis.jpg" },
+    { title: "Asset Lifecycle Planning", img: "/Services/asset-life-cycle.jpg" },
+    { title: "Failure Modes & Effects Analysis & Root Cause Analysis", img: "/Services/FMEA.jpg" },
+    { title: "Maintenance Auditing & Benchmarking", img: "/Services/maintainance-auditing-and-benchmarking.jpg" },
+    { title: "SAP PM Implementation & Optimization", img: "/Services/SAP-plant-maintainance.jpg" },
+    { title: "Reliability managament influence & change culture", img: "/Services/Reliability-management-influence-and-change-culture.jpg" },
+    { title: "(APM) Solutions as a Service", img: "/Services/asset-performance-management.jpg" },
+    { title: "Spare Parts & Inventory Optimization", img: "/Services/spare-parts.jpg" },
+    { title: "Turnaround & Shutdown Management", img: "/Services/Turnaround&Shutdown-managment.jpg" },
+    { title: "Digital Transformation in Maintenance", img: "/Services/digital-transformation.jpg" },
   ];
-
+  
   const trainingCards = [
     { title: "CMRP Certificate Exam Preparation", img: "/Services/CMRP.png" },
-    { title: "CAMA Certificate Exam Preparation", img: "/Services/CAMA.png" },
+    { title: "CAMA Certificate Exam Preparation", img: "/Services/CAMA.jpg" },
     { title: "CMRT Certificate Exam Preparation", img: "/Services/CMRT.png" },
-    { title: "RCM (Reliability Centered Maintenance)", img: "/Services/RCM-training.png" },
-    { title: "RCA & RCFA", img: "/Services/RCA.png" },
-    { title: "RELM", img: "/Services/RELM.png" },
-    { title: "Maintenance Auditing and Benchmarking", img: "/Services/Auditing.jpg" },
-    { title: "Fundamentals of Reliability Engineering", img: "/Services/fundamentals.jpg" },
-    { title: "TPM (Total Productive Maintenance)", img: "/Services/TPM.png" },
-    { title: "Influence Reliability Management", img: "/Services/influence.jpg" },
-    { title: "Machinery Failure Analysis & Prevention", img: "/Services/machinery.jpg" },
-    { title: "Reliability & Maintenance Engineering FMEA", img: "/Services/FMEA.png" },
-    { title: "Understanding ISO 55000", img: "/Services/ISO55000.jpg" },
-    { title: "Asset Management Standard", img: "/Services/standard.jpg" },
-    { title: "Lean Management Tools Workshop", img: "/Services/lean.jpg" },
+    { title: "RCM (Reliability Centered Maintenance)", img: "/Services/RCM.jpg" },
+    { title: "RCA & RCFA", img: "/Services/RCFA.jpg" },
+    { title: "RELM", img: "/Services/RELM.jpg" },
+    { title: "Maintenance Auditing and Benchmarking", img: "/Services/maintainance-auditing-and-benchmarking.jpg" },
+    { title: "Fundamentals of Reliability Engineering", img: "/Services/Fundamental-of-reliability-engineering.jpg" },
+    { title: "TPM (Total Productive Maintenance)", img: "/Services/TPM.jpg" },
+    { title: "Reliability Management Influences & Changing Culture", img: "/Services/Reliability-management-influence-and-change-culture.jpg" },
+    { title: "Machinery Failure Analysis & Prevention", img: "/Services/Machinery.jpg" },
+    { title: "Faliure Mode Effect Analysis Workshop", img: "/Services/FMEA.jpg" },
+    { title: "ISO 55000 Understanding Asset Management", img: "/Services/ISO55000.jpg" },
+    { title: "Lean Management Tools Workshop", img: "/Services/Lean-management.jpg" },
   ];
 
   const [activeTab, setActiveTab] = useState("consultation");
@@ -124,7 +121,7 @@ export default function Services() {
       </div>
 
       {/* Carousel */}
-      <div className="relative w-full max-w-7xl mx-auto overflow-hidden">
+      <div className="relative w-full max-w-8xl mx-auto overflow-hidden">
         <div
           key={activeTab}
           className="flex transition-transform duration-500 ease-in-out"
