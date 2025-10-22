@@ -3,78 +3,91 @@ import { useEffect, useState } from "react";
 const Gallery = () => {
   const [images, setImages] = useState([]);
 
-  // ✅ Auto-import all images from src/assets/Events
+  // Auto-import all images from src/assets/Events
   const imageModules = import.meta.glob("/src/assets/Events/*.{jpg,jpeg,png,webp}", { eager: true });
 
   useEffect(() => {
-    const loadedImages = Object.keys(imageModules).map((path) => {
-      const parts = path.split("/");
-      const filename = parts[parts.length - 1];
+    const loaded = Object.keys(imageModules).map((path) => {
+      const filename = path.split("/").pop();
       const title = filename.replace(/\.[^/.]+$/, "").replace(/[-_]/g, " ");
       return { src: imageModules[path].default, title };
     });
-    setImages(loadedImages);
+    setImages(loaded);
   }, []);
 
   const [index, setIndex] = useState(0);
-  const itemsPerSlide = 6;
-  const totalSlides = Math.ceil(images.length / itemsPerSlide);
 
-  // ✅ Auto-slide every 1 second
+  // Auto-slide every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % totalSlides);
-    }, 3000); // <-- 1000ms = 1 second
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
     return () => clearInterval(interval);
-  }, [totalSlides]);
+  }, [images]);
 
-  const start = index * itemsPerSlide;
-  const visible = images.slice(start, start + itemsPerSlide);
-  const displayed =
-    visible.length < itemsPerSlide
-      ? [...visible, ...images.slice(0, itemsPerSlide - visible.length)]
-      : visible;
+  // Show 5 images (2 left, center, 2 right)
+  const visibleCount = 5;
+  const half = Math.floor(visibleCount / 2);
+
+  const getPosition = (i) => {
+    let diff = i - index;
+    if (diff < -half) diff += images.length;
+    if (diff > half) diff -= images.length;
+    return diff;
+  };
+
+  const handleClick = (position) => {
+    if (position === 1) {
+      // Clicked right image → next
+      setIndex((prev) => (prev + 1) % images.length);
+    } else if (position === -1) {
+      // Clicked left image → previous
+      setIndex((prev) => (prev - 1 + images.length) % images.length);
+    }
+  };
 
   return (
-    <section id="events" className="py-20 px-4 bg-gray-100 overflow-hidden">
-      <div className="container mx-auto max-w-7xl text-center">
-        <h2 className="text-4xl font-bold mb-4 text-gray-800">Events</h2>
-        <p className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
-          Automatically loaded events from the folder.
-        </p>
+    <section id="events" className="py-20 bg-gray-100 overflow-hidden">
+      <div className="text-center mb-12">
+        <h2 className="text-4xl font-bold text-gray-800 mb-2">Events</h2>
+      </div>
 
-        {/* ✅ Smooth animated slide change */}
-        <div className="relative w-full overflow-hidden">
-          <div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-200 ease-in-out"
-            key={index} // Forces animation re-render
-          >
-            {displayed.map((img, i) => (
+      {/* Carousel */}
+      <div className="relative w-full flex justify-center items-center">
+        <div className="relative flex justify-center items-center w-full h-[480px]">
+          {images.map((img, i) => {
+            const position = getPosition(i);
+            if (Math.abs(position) > half) return null;
+
+            // Adjust transformation values for size and spacing
+            const scale = 1.3 - Math.abs(position) * 0.25; // Center is 1.3x
+            const blur = Math.abs(position) * 2;
+            const zIndex = 10 - Math.abs(position);
+            const opacity = position === 0 ? 1 : 0.7;
+            const translateX = position * 320;
+
+            return (
               <div
                 key={i}
-                className="group overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300"
+                className={`absolute transition-all duration-700 ease-in-out cursor-pointer ${
+                  position === 0 ? "pointer-events-none" : "hover:opacity-90"
+                }`}
+                style={{
+                  transform: `translateX(${translateX}px) scale(${scale})`,
+                  filter: `blur(${blur}px)`,
+                  opacity,
+                  zIndex,
+                }}
+                onClick={() => handleClick(position)}
               >
                 <img
                   src={img.src}
                   alt={img.title}
-                  className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-[460px] h-[340px] object-contain rounded-2xl shadow-2xl border-4 border-white bg-white"
                 />
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Dots */}
-        <div className="flex justify-center mt-8 space-x-2">
-          {Array.from({ length: totalSlides }).map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setIndex(i)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                i === index ? "bg-cyan-600 scale-110" : "bg-gray-400"
-              }`}
-            />
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
