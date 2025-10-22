@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 
 export default function Services() {
-  
+
   const consultationCards = [
     { title: "Asset Managemnet Gap Analysis", img: "/Services/asset-management-gap-analysis.jpg" },
     { title: "Reliability Centered Maintenance (RCM)", img: "/Services/RCM.jpg" },
@@ -19,7 +19,7 @@ export default function Services() {
     { title: "Reliability managament influence & change culture", img: "/Services/Reliability-management-influence-and-change-culture.jpg" },
     { title: "(APM) Solutions as a Service", img: "/Services/asset-performance-management.jpg" },
     { title: "Spare Parts & Inventory Optimization", img: "/Services/spare-parts.jpg" },
-    { title: "Turnaround & Shutdown Management", img: "/Services/Turnaround&Shutdown-managment.jpg" },
+    { title: "Turnaround & Shutdown Management", img: "/Services/Turnaround-and-Shutdown-managment.jpg" },
     { title: "Digital Transformation in Maintenance", img: "/Services/digital-transformation.jpg" },
   ];
   
