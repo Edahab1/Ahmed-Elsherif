@@ -8,7 +8,7 @@ export default function Services() {
   const consultationCards = [
     { title: "Asset Managemnet Gap Analysis", img: "/Services/asset-management-gap-analysis.jpg" },
     { title: "Reliability Centered Maintenance (RCM)", img: "/Services/RCM.jpg" },
-    { title: "Reliability Strategy Development", img: "/Services/RSD.jpg" },
+    { title: "Reliability Strategy Development", img: "/Services/RSD.png" },
     { title: "Strategic Asset Management Planning", img: "/Services/SAMP.jpg" },
     { title: "Asset Criticality Assessment", img: "/Services/asset-criticality-assessment.jpg" }, 
     { title: "RAM Analysis & Reliability Block Diagrams", img: "/Services/RAM-analysis.jpg" },
@@ -140,11 +140,6 @@ export default function Services() {
                   className="flex-grow bg-cover bg-no-repeat"
                   style={{ backgroundImage: `url(${card.img})` }}
                 ></div>
-
-                {/* Title Section */}
-                <div className="bg-cyan-600 text-white text-center py-3 px-2">
-                  <h3 className="text-lg font-medium">{card.title}</h3>
-                </div>
               </div>
             </div>
           ))}

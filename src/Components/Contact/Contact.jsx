@@ -51,7 +51,7 @@ export default function Contact() {
           Get in Touch
         </h2>
         <p className="mb-6 text-center text-gray-600 sm:text-lg">
-          Need details about our Business plan? Let us know.
+          Need more details? Send us a message.
         </p>
 
         <form onSubmit={sendEmail} className="space-y-6">
@@ -101,7 +101,7 @@ export default function Contact() {
               name="message"
               rows={6}
               className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-gray-900 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
-              placeholder="Leave a comment..."
+              placeholder="Leave a message..."
               required
             ></textarea>
           </div>

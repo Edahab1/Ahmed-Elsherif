@@ -20,7 +20,7 @@ const clients = [
   { name: "ANRPC", logo: "/Clients/ANRPC.jpg" },
   { name: "PMS", logo: "/Clients/PMS.png" },
   { name: "SUMED", logo: "/Clients/SUMED.jpg" },
-  { name: "Petro Oman", logo: "/Clients/Petro Oman.jpg" },
+  { name: "Petro Oman", logo: "/Clients/Petro-Oman.jpg" },
   { name: "ENPPI", logo: "/Clients/ENPPI.png" },
   { name: "BP", logo: "/Clients/BP.png" },
 ];

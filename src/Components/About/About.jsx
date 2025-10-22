@@ -42,7 +42,7 @@ const About = () => {
 
               <div className="bg-white p-4 rounded-lg shadow-sm">
                 <h4 className="font-semibold text-blue-700">Training hours</h4>
-                <p className="text-sm">* 3000+ hours in the Middle East</p>
+                <p className="text-sm">* 3000+ hours</p>
               </div>
 
               <div className="bg-white p-4 rounded-lg shadow-sm">

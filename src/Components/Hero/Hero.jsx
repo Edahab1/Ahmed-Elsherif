@@ -67,10 +67,10 @@ const Hero = () => {
         {/* Social Media Icons */}
         <div className="flex justify-center items-center space-x-6 text-4xl">
           <a
-            href="https://www.youtube.com"
+            href="https://www.youtube.com/channel/UCL5opv9lCxaDE0qs0kmcITQ"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:scale-110 transition-transform"
+            className="hover:scale-110 transition-transform hidden"
           >
             <i className="fa-brands fa-square-youtube text-red-500"></i>
           </a>
