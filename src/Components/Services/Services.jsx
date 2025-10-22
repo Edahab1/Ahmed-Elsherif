@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 
 export default function Services() {
+  
   const consultationCards = [
     { title: "Asset Managemnet Gap Analysis", img: "/Services/asset-management-gap-analysis.jpg" },
     { title: "Reliability Centered Maintenance (RCM)", img: "/Services/RCM.jpg" },
