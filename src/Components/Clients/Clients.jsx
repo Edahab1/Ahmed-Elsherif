@@ -6,23 +6,23 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const clients = [
   { name: "Aramco Saudi", logo: "/Clients/aramco.png" },
   { name: "ADNOC", logo: "/Clients/ADNOC.png" },
+  { name: "BP", logo: "/Clients/BP.png" },
+  { name: "YASREF", logo: "/Clients/YASREF.png" },
+  { name: "Satorp", logo: "/Clients/satorp.jpg" },
+  { name: "OQGN", logo: "/Clients/OQGN.png" },
+  { name: "Petro Oman", logo: "/Clients/Petro-Oman.jpg" },
   { name: "ENGIE", logo: "/Clients/ENGIE.png" },
   { name: "CAIRN", logo: "/Clients/CAIRN.png" },
   { name: "rekeep", logo: "/Clients/rekeep.png" },
   { name: "Cipla", logo: "/Clients/Cipla.png" },
-  { name: "OQGN", logo: "/Clients/OQGN.png" },
-  { name: "Petromaint", logo: "/Clients/Petromaint.png" },
   { name: "SOYVEN", logo: "/Clients/SOYVEN.png" },
   { name: "SEIL", logo: "/Clients/SEIL.png" },
-  { name: "YASREF", logo: "/Clients/YASREF.png" },
-  { name: "Satorp", logo: "/Clients/satorp.jpg" },
+  { name: "ENPPI", logo: "/Clients/ENPPI.png" },
+  { name: "SUMED", logo: "/Clients/SUMED.jpg" },
   { name: "ASORC", logo: "/Clients/ASORC.jpg" },
   { name: "ANRPC", logo: "/Clients/ANRPC.jpg" },
   { name: "PMS", logo: "/Clients/PMS.png" },
-  { name: "SUMED", logo: "/Clients/SUMED.jpg" },
-  { name: "Petro Oman", logo: "/Clients/Petro-Oman.jpg" },
-  { name: "ENPPI", logo: "/Clients/ENPPI.png" },
-  { name: "BP", logo: "/Clients/BP.png" },
+  { name: "Petromaint", logo: "/Clients/Petromaint.png" },
 ];
 
 export default function OurClients() {
@@ -50,10 +50,7 @@ export default function OurClients() {
   };
 
   return (
-    <Element
-      name="clients"
-      className="py-10 min-h-[50vh] text-center relative"
-    >
+    <Element name="clients" className="py-10 min-h-[50vh] text-center relative">
       <h2 className="text-4xl font-bold mb-10">Our Clients</h2>
 
       <div className="relative max-w-6xl mx-auto overflow-hidden">

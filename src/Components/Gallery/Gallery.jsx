@@ -77,7 +77,7 @@ const Gallery = () => {
                   <img
                     src={img.src}
                     alt={img.title}
-                    className="w-[420px] h-[300px] object-contain rounded-3xl shadow-2xl border-4 border-white bg-white"
+                    className="w-[420px] h-[300px] object-fill rounded-3xl shadow-2xl border-4 border-white bg-white"
                   />
 
                   {/* Reflection */}
