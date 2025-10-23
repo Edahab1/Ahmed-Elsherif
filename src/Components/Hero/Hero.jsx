@@ -23,7 +23,7 @@ const Hero = () => {
 
       <div className="relative z-10 max-w-3xl flex flex-col items-center">
         {/* Main Heading */}
-        <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-4 tracking-tight text-white drop-shadow-lg">
+        <h1 className="text-5xl md:text-6xl font-extrabold leading-tight my-6 tracking-tight text-white drop-shadow-lg">
           Eng. Ahmed El-Sherif
         </h1>
 

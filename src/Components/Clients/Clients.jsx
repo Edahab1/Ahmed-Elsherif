@@ -65,7 +65,7 @@ export default function OurClients() {
           {clients.map((client, index) => (
             <div
               key={index}
-              className="flex justify-center items-center p-6 w-1/4" // 4 per row
+              className="flex justify-center items-center p-6 md:w-1/4" // 4 per row
             >
               <img
                 src={client.logo}

@@ -2,15 +2,13 @@ import { useState, useEffect } from "react";
 import { Element } from "react-scroll";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
-
 export default function Services() {
-
   const consultationCards = [
     { title: "Asset Managemnet Gap Analysis", img: "/Services/asset-management-gap-analysis.jpg" },
     { title: "Reliability Centered Maintenance (RCM)", img: "/Services/RCM.jpg" },
     { title: "Reliability Strategy Development", img: "/Services/RSD.png" },
     { title: "Strategic Asset Management Planning", img: "/Services/SAMP.jpg" },
-    { title: "Asset Criticality Assessment", img: "/Services/asset-criticality-assessment.jpg" }, 
+    { title: "Asset Criticality Assessment", img: "/Services/asset-criticality-assessment.jpg" },
     { title: "RAM Analysis & Reliability Block Diagrams", img: "/Services/RAM-analysis.jpg" },
     { title: "Asset Lifecycle Planning", img: "/Services/asset-life-cycle.jpg" },
     { title: "Failure Modes & Effects Analysis & Root Cause Analysis", img: "/Services/FMEA.jpg" },
@@ -22,10 +20,10 @@ export default function Services() {
     { title: "Turnaround & Shutdown Management", img: "/Services/Turnaround-and-Shutdown-managment.jpg" },
     { title: "Digital Transformation in Maintenance", img: "/Services/digital-transformation.jpg" },
   ];
-  
+
   const trainingCards = [
     { title: "CMRP Certificate Exam Preparation", img: "/Services/CMRP.png" },
-    { title: "CAMA Certificate Exam Preparation", img: "/Services/CAMA.jpg" },
+    { title: "CAMA Certificate Exam Preparation", img: "/Services/CAMA.png" },
     { title: "CMRT Certificate Exam Preparation", img: "/Services/CMRT.png" },
     { title: "RCM (Reliability Centered Maintenance)", img: "/Services/RCM.jpg" },
     { title: "RCA & RCFA", img: "/Services/RCFA.jpg" },
@@ -44,11 +42,14 @@ export default function Services() {
   const [index, setIndex] = useState(0);
   const [cardsPerView, setCardsPerView] = useState(3);
   const [showModal, setShowModal] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   const cards = activeTab === "consultation" ? consultationCards : trainingCards;
 
   useEffect(() => {
     const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+
       if (window.innerWidth < 640) {
         setCardsPerView(1);
       } else if (window.innerWidth < 1024) {
@@ -65,17 +66,17 @@ export default function Services() {
 
   const nextSlide = () => {
     if (index < cards.length - cardsPerView) {
-      setIndex(index + cardsPerView);  // Move forward
+      setIndex(index + cardsPerView);
     } else {
-      setIndex(0);  // Restart from the first card set
+      setIndex(0);
     }
   };
 
   const prevSlide = () => {
     if (index > 0) {
-      setIndex(index - cardsPerView);  // Move backward
+      setIndex(index - cardsPerView);
     } else {
-      setIndex(cards.length - cardsPerView);  // Go to the last card set
+      setIndex(cards.length - cardsPerView);
     }
   };
 
@@ -128,28 +129,44 @@ export default function Services() {
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${(index * 100) / cardsPerView}%)` }}
         >
-          {cards.map((card, i) => (
-            <div
-              key={i}
-              className="flex-shrink-0 px-4"
-              style={{ width: `${100 / cardsPerView}%` }}
-            >
-              <div className="flex flex-col h-64 rounded-2xl shadow-xl overflow-hidden bg-white">
-                {/* Image Section */}
-                <div
-                  className="flex-grow bg-cover bg-no-repeat"
-                  style={{ backgroundImage: `url(${card.img})` }}
-                ></div>
+          {cards.map((card, i) => {
+            const isCAMA = card.title.includes("CAMA");
+
+            return (
+              <div
+                key={i}
+                className="flex-shrink-0 px-4"
+                style={{ width: `${100 / cardsPerView}%` }}
+              >
+                <div className="flex flex-col h-64 rounded-2xl shadow-xl overflow-hidden bg-white">
+                  {/* Image Section with CAMA Scaling Fix */}
+                  <div
+                    className={`flex-grow bg-no-repeat bg-center rounded-t-2xl transition-all duration-500 hover:scale-105`}
+                    style={{
+                      backgroundImage: `url(${card.img})`,
+                      backgroundSize: isCAMA
+                        ? screenWidth < 768
+                          ? "90%" // mobile
+                          : "70%" // desktop
+                        : "cover",
+                      backgroundPosition: isCAMA
+                        ? screenWidth < 768
+                          ? "center 40%" // mobile offset
+                          : "center"
+                        : "center",
+                    }}
+                  ></div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Navigation Arrows */}
         {index > 0 && (
           <button
             onClick={prevSlide}
-            className="absolute top-1/2 -translate-y-1/2 left-4 bg-gray-800 text-white p-3 rounded-full shadow hover:bg-gray-700"
+            className="absolute top-1/2 -translate-y-1/2 left-4 bg-gray-600 text-white p-3 rounded-full shadow hover:bg-gray-500 bg-opacity-80"
           >
             <ChevronLeft size={28} />
           </button>
@@ -157,7 +174,7 @@ export default function Services() {
         {index < cards.length - cardsPerView && (
           <button
             onClick={nextSlide}
-            className="absolute top-1/2 -translate-y-1/2 right-4 bg-gray-800 text-white p-3 rounded-full shadow hover:bg-gray-700"
+            className="absolute top-1/2 -translate-y-1/2 right-4 bg-gray-600 text-white p-3 rounded-full shadow hover:bg-gray-500 bg-opacity-80"
           >
             <ChevronRight size={28} />
           </button>
@@ -169,7 +186,7 @@ export default function Services() {
         {Array.from({ length: Math.ceil(cards.length / cardsPerView) }).map((_, i) => (
           <button
             key={i}
-            onClick={() => setIndex(i * cardsPerView)}  // Adjust to multiple of 3 (cardsPerView)
+            onClick={() => setIndex(i * cardsPerView)}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
               i * cardsPerView === index ? "bg-cyan-600 scale-125" : "bg-gray-400"
             }`}
@@ -199,7 +216,10 @@ export default function Services() {
 
             {/* Title with Dynamic Count */}
             <h3 className="text-2xl font-bold text-gray-800 mb-6">
-              {activeTab === "consultation" ? "Consultation Services" : "Training Services"} ({cards.length})
+              {activeTab === "consultation"
+                ? "Consultation Services"
+                : "Training Services"}{" "}
+              ({cards.length})
             </h3>
 
             {/* Service List */}
