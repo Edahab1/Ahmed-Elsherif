@@ -37,7 +37,7 @@ const About = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-white p-4 rounded-lg shadow-sm ">
                 <h4 className="font-semibold text-blue-700">Certifications</h4>
-                <p>CMRP, CRL, CAMA2, ASU-LI, BMI, TOT</p>
+                <p>CMRP, CRL, CAMA2, ASU-LI, BMI, TOT, EMBA</p>
               </div>
 
               <div className="bg-white p-4 rounded-lg shadow-sm">
