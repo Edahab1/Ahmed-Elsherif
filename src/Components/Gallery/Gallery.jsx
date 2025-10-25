@@ -71,7 +71,7 @@ const Gallery = () => {
             const isCAMA = img.title.toLowerCase().includes("cama");
             const imageScale = isCAMA
               ? "object-contain md:object-cover scale-[1.05] md:scale-[1]"
-              : "object-cover";
+              : "object-contain";
 
             return (
               <div
