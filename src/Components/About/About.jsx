@@ -47,7 +47,7 @@ const About = () => {
 
               <div className="bg-white p-4 rounded-lg shadow-sm">
                 <h4 className="font-semibold text-blue-700">Experience</h4>
-                <p className="text-sm">* 17+ Years in Mechanical Maintenance & Reliability</p>
+                <p className="text-sm">* 17+ Years in Maintennance, Reliability and Asset Management</p>
               </div>
 
               <div className="bg-white p-4 rounded-lg shadow-sm">
