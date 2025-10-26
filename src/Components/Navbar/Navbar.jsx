@@ -1,22 +1,19 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-scroll";
-import logoLight from "/logo light.png";
+import { Link as ScrollLink } from "react-scroll";
+import { Link as RouterLink } from "react-router-dom";
 import logoDark from "/logo dark.png";
+import logoLight from "/logo light.png";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Detect scroll position
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 80);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close menu when resizing to desktop
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) setMenuOpen(false);
@@ -27,7 +24,6 @@ export default function Navbar() {
   }, []);
 
   const handleLinkClick = () => setMenuOpen(false);
-
 
   return (
     <nav
@@ -40,14 +36,21 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        {/* Logo */}
-        <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+        {/* Logo now scrolls to Hero section */}
+        <ScrollLink
+          to="hero"
+          smooth={true}
+          duration={800}
+          offset={-80}
+          onClick={handleLinkClick}
+          className="flex items-center space-x-3 rtl:space-x-reverse cursor-pointer"
+        >
           <img
             src={logoDark}
             className="h-10 md:h-16 transition-all duration-300"
             alt="Logo"
           />
-        </a>
+        </ScrollLink>
 
         {/* Hamburger Button */}
         <button
@@ -67,12 +70,32 @@ export default function Navbar() {
               menuOpen ? "text-white" : "md:bg-transparent"
             }`}
           >
-            {["home", "about", "services", "events", "contact"].map((section) => (
+            {/* Blog first */}
+            <li
+              className={`${menuOpen ? "border-b border-gray-700 last:border-0" : ""}`}
+            >
+              <RouterLink
+                to="/blog"
+                onClick={handleLinkClick}
+                className={`block py-2 px-3 rounded-sm cursor-pointer transition-colors duration-300 ${
+                  menuOpen
+                    ? "text-white hover:text-cyan-400"
+                    : scrolled
+                    ? "md:text-slate-900 md:dark:text-slate-100 hover:text-cyan-600"
+                    : "text-white hover:text-cyan-500"
+                }`}
+              >
+                Blog
+              </RouterLink>
+            </li>
+
+            {/* Remaining scroll sections */}
+            {["about", "services", "events", "contact"].map((section) => (
               <li
                 key={section}
                 className={`${menuOpen ? "border-b border-gray-700 last:border-0" : ""}`}
               >
-                <Link
+                <ScrollLink
                   to={section}
                   smooth={true}
                   duration={800}
@@ -87,7 +110,7 @@ export default function Navbar() {
                   }`}
                 >
                   {section.charAt(0).toUpperCase() + section.slice(1)}
-                </Link>
+                </ScrollLink>
               </li>
             ))}
           </ul>

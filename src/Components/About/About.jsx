@@ -36,13 +36,18 @@ const About = () => {
 
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-white p-4 rounded-lg shadow-sm ">
+                <h4 className="font-semibold text-blue-700">Education</h4>
+                <p>Executive Master of Business Administration <span className="font-bold">(EMBA)</span></p>
+              </div>
+
+              <div className="bg-white p-4 rounded-lg shadow-sm ">
                 <h4 className="font-semibold text-blue-700">Certifications</h4>
-                <p>CMRP, CRL, CAMA2, ASU-LI, BMI, TOT, EMBA</p>
+                <p>CMRP, CRL, CAMA2, ASU-LI, BMI, TOT</p>
               </div>
 
               <div className="bg-white p-4 rounded-lg shadow-sm">
-                <h4 className="font-semibold text-blue-700">Training hours</h4>
-                <p className="text-sm">* 3000+ hours</p>
+                <h4 className="font-semibold text-blue-700">Conferences & Technical hours</h4>
+                <p className="text-sm">* 16 Event, 3000+ hours</p>
               </div>
 
               <div className="bg-white p-4 rounded-lg shadow-sm">
@@ -50,11 +55,18 @@ const About = () => {
                 <p className="text-sm">* 17+ Years in Maintennance, Reliability and Asset Management</p>
               </div>
 
-              <div className="bg-white p-4 rounded-lg shadow-sm">
-                <h4 className="font-semibold text-blue-700">Technical Events</h4>
-                <p className="text-sm">* 16 Event</p>
-              </div>
+              
             </div>
+            <div className="bg-white mt-4 p-4 rounded-lg shadow-sm">
+                <h4 className="font-semibold text-blue-700">Memberships & Affiliations</h4>
+                <p className="text-sm">We are honored to be members of respected industry organizations:</p>
+                <ul className="text-sm list-disc list-inside mt-2">
+                  <li>AMP (Association of Asset Management Professionals - USA)</li>
+                  <li>SMRP (Society for Maintenance & Reliability Professionals - USA)</li>
+                  <li>WPIAM (World Partners in Asset Management - Australia)</li>
+                  <li>ASNT (American Society fir Non-destructive Testing - USA)</li>
+                </ul>
+              </div>
           </div>
           <div>
             <img
