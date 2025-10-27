@@ -4,11 +4,25 @@ import logoDark from "/logo dark.png";
 
 export default function Blog() {
   const [activeTab, setActiveTab] = useState("articles");
+  const [selectedArticle, setSelectedArticle] = useState(null);
 
-  const tabs = [
-    { id: "articles", label: "Articles" },
-    { id: "certificates", label: "Certificates & Accomplishments" },
-    { id: "news", label: "Latest News" },
+  
+  const articles = [
+    {
+      id: 1,
+      title: "Asset Reliability Strategies",
+      file: "/Articles/Aligning-asset-management-strategies.pdf",
+    },
+    {
+      id: 2,
+      title: "Data Analytics in Maintenance",
+      file: "/Articles/Asset-integrity-management.pdf",
+    },
+    {
+      id: 3,
+      title: "Digital Transformation in Asset Management",
+      file: "/Articles/Optimizing-preventive-maintenance-in-refineries.pdf",
+    },
   ];
 
   return (
@@ -37,47 +51,60 @@ export default function Blog() {
         </p>
       </header>
 
-      {/* blog Tabs */}
+      {/* Tabs */}
       <div className="flex justify-center border-b bg-white sticky top-[80px] z-40 shadow-sm overflow-x-auto">
-        {tabs.map((tab) => (
-          <button
-            key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
-            className={`px-4 sm:px-6 py-3 text-sm md:text-base font-semibold transition-colors duration-300 whitespace-nowrap ${
-              activeTab === tab.id
-                ? "border-b-2 border-cyan-600 text-cyan-600"
-                : "text-gray-500 hover:text-cyan-500"
-            }`}
-          >
-            {tab.label}
-          </button>
-        ))}
+        <button
+          onClick={() => setActiveTab("articles")}
+          className={`px-4 sm:px-6 py-3 text-sm md:text-base font-semibold transition-colors duration-300 whitespace-nowrap ${
+            activeTab === "articles"
+              ? "border-b-2 border-cyan-600 text-cyan-600"
+              : "text-gray-500 hover:text-cyan-500"
+          }`}
+        >
+          Articles
+        </button>
       </div>
 
-      {/* Content Area */}
-      <div className="flex-grow p-6 md:p-10 bg-gray-50">
-        {activeTab === "articles" && (
-          <div className="text-center text-gray-600">
-            <p className="text-lg">📝 Articles will appear here soon.</p>
-          </div>
-        )}
+      {/* Articles Section */}
+      {activeTab === "articles" && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-8">
+          {articles.map((article) => (
+            <div
+              key={article.id}
+              className="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow cursor-pointer border border-gray-200"
+              onClick={() => setSelectedArticle(article)}
+            >
+              <h2 className="text-xl font-semibold text-gray-800 mb-2">
+                {article.title}
+              </h2>
+              <p className="text-gray-500 text-sm">Click to view full article</p>
+            </div>
+          ))}
+        </div>
+      )}
 
-        {activeTab === "certificates" && (
-          <div className="text-center text-gray-600">
-            <p className="text-lg">
-              🏆 Certificates & Accomplishments will appear here soon.
-            </p>
-          </div>
-        )}
+      {/* PDF Modal */}
+      {selectedArticle && (
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4">
+          <div className="relative bg-white w-full max-w-5xl h-[80vh] rounded-2xl shadow-lg overflow-hidden">
+            {/* Close button */}
+            <button
+              onClick={() => setSelectedArticle(null)}
+              className="absolute top-3 right-3 bg-gray-800 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-red-600 transition"
+            >
+              ✕
+            </button>
 
-        {activeTab === "news" && (
-          <div className="text-center text-gray-600">
-            <p className="text-lg">
-              📢 Latest news and announcements coming soon.
-            </p>
+            <iframe
+  src={selectedArticle.file}
+  title={selectedArticle.title}
+  className="w-full h-full"
+  style={{ border: "none" }}
+/>
+
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }
