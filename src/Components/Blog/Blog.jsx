@@ -6,7 +6,6 @@ export default function Blog() {
   const [activeTab, setActiveTab] = useState("articles");
   const [selectedArticle, setSelectedArticle] = useState(null);
 
-  
   const articles = [
     {
       id: 1,
@@ -87,7 +86,7 @@ export default function Blog() {
       {selectedArticle && (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4">
           <div className="relative bg-white w-full max-w-5xl h-[80vh] rounded-2xl shadow-lg overflow-hidden">
-            {/* Close button */}
+            {/* Close Button */}
             <button
               onClick={() => setSelectedArticle(null)}
               className="absolute top-3 right-3 bg-gray-800 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-red-600 transition"
@@ -95,13 +94,13 @@ export default function Blog() {
               ✕
             </button>
 
+            {/* Inline PDF Viewer */}
             <iframe
-  src={selectedArticle.file}
-  title={selectedArticle.title}
-  className="w-full h-full"
-  style={{ border: "none" }}
-/>
-
+              src={selectedArticle.file}
+              title={selectedArticle.title}
+              className="w-full h-full"
+              style={{ border: "none" }}
+            />
           </div>
         </div>
       )}
