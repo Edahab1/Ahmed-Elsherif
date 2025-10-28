@@ -1,27 +1,29 @@
-import React, { useEffect, useState } from 'react'
+import { Link } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 
 export default function NotFound() {
-
-    const [loading, setloading] = useState(false);
-
-    useEffect(() => {
-        
-    }, []);
-
-
   return (
-    <>
-    <section className="bg-white dark:bg-gray-900">
-  <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-    <div className="mx-auto max-w-screen-sm text-center">
-      <h1 className="mb-4 text-7xl tracking-tight font-extrabold lg:text-9xl text-primary-600 dark:text-primary-500">404</h1>
-      <p className="mb-4 text-3xl tracking-tight font-bold text-gray-900 md:text-4xl dark:text-white">Something's missing.</p>
-      <p className="mb-4 text-lg font-light text-gray-500 dark:text-gray-400">Sorry, we can't find that page. You'll find lots to explore on the home page. </p>
-      <a href="#" className="inline-flex text-white bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900 my-4">Back to Homepage</a>
-    </div>   
-  </div>
-</section>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-gray-50 to-gray-100 text-center px-4">
+      <h1 className="text-8xl font-extrabold text-gray-800 mb-4">404</h1>
+      <h2 className="text-2xl md:text-3xl font-semibold text-gray-700 mb-2">
+        Page Not Found
+      </h2>
+      <p className="text-gray-500 max-w-md mb-8">
+        Sorry, the page you’re looking for doesn’t exist or may have been moved.
+        Please check the URL or return to the homepage.
+      </p>
 
-    </>
-  )
+      <Link
+        to="/"
+        className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-5 rounded-full shadow transition-all duration-200"
+      >
+        <ArrowLeft className="w-4 h-4" />
+        Back to Home
+      </Link>
+
+      <div className="absolute bottom-6 text-sm text-gray-400">
+        © {new Date().getFullYear()} ZRAMS | All Rights Reserved
+      </div>
+    </div>
+  );
 }

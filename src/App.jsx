@@ -8,6 +8,7 @@ import Contact from "./Components/Contact/Contact";
 import Footer from "./Components/Footer/Footer";
 import Gallery from "./Components/Gallery/Gallery";
 import Clients from "./Components/Clients/Clients";
+import NotFound from "./Components/NotFound/NotFound";
 
 const routes = createBrowserRouter([
   {
@@ -30,6 +31,14 @@ const routes = createBrowserRouter([
     element: (
       <>
         <Blog />
+      </>
+    ),
+  },
+  {
+    path: "*",
+    element: (
+      <>
+        <NotFound />
       </>
     ),
   },
