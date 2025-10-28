@@ -135,7 +135,7 @@ export default function Blog() {
         {/* Articles Grid */}
         <div
           className="
-            flex-1 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 
+            flex-1 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 
             w-full lg:ml-[300px]
           "
         >
