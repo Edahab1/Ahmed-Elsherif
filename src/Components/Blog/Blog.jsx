@@ -87,7 +87,7 @@ export default function Blog() {
       </header>
 
       {/* Tabs */}
-      <div className="flex justify-center border-b bg-white sticky top-[80px] z-40 shadow-sm overflow-x-auto">
+      <div className="flex justify-center border-b bg-white sticky z-40 shadow-sm overflow-x-auto">
         <button
           onClick={() => setActiveTab("articles")}
           className={`px-6 py-3 text-base font-semibold transition-colors duration-300 whitespace-nowrap ${
@@ -100,31 +100,45 @@ export default function Blog() {
         </button>
       </div>
 
-      {/* Sidebar (Floating Left, outside main content) */}
-      <aside className="hidden lg:block fixed top-60 left-10 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 p-6 h-fit">
-        <h3 className="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">
-          More Articles
-        </h3>
-        <ul className="space-y-5">
-          {moreArticles.map((item) => (
-            <li key={item.id}>
-              <a
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-start gap-2 text-cyan-700 font-medium hover:text-cyan-900 transition group"
-              >
-                <ExternalLink className="w-4 h-4 text-cyan-600 mt-1 group-hover:text-cyan-800 transition" />
-                <span className="text-sm leading-tight">{item.title}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </aside>
+      {/* Responsive Layout */}
+      <div className="flex flex-col lg:flex-row relative max-w-7xl mx-auto w-full px-6 py-10 gap-10">
+        {/* Sidebar (Responsive) */}
+        <aside
+          className="
+            w-full md:w-[70%] lg:w-64 
+            bg-white rounded-2xl shadow-xl border border-gray-100 p-6 h-fit 
+            mx-auto md:mx-0 
+            lg:fixed lg:top-60 lg:left-10 
+            lg:block
+          "
+        >
+          <h3 className="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">
+            More Articles
+          </h3>
+          <ul className="space-y-5">
+            {moreArticles.map((item) => (
+              <li key={item.id}>
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-2 text-cyan-700 font-medium hover:text-cyan-900 transition group"
+                >
+                  <ExternalLink className="w-4 h-4 text-cyan-600 mt-1 group-hover:text-cyan-800 transition" />
+                  <span className="text-sm leading-tight">{item.title}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </aside>
 
-      {/* Main Articles Section */}
-      <div className="flex justify-center lg:justify-end py-10 px-6 max-w-7xl mx-auto w-full">
-        <div className="w-full lg:w-[80%] grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
+        {/* Articles Grid */}
+        <div
+          className="
+            flex-1 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 
+            w-full lg:ml-[300px]
+          "
+        >
           {articles.map((article) => (
             <div
               key={article.id}
@@ -132,7 +146,7 @@ export default function Blog() {
               className="group bg-white rounded-2xl shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer border border-gray-100 flex flex-col justify-between h-full"
             >
               {/* Image Preview */}
-              <div className="w-full  overflow-hidden rounded-t-2xl">
+              <div className="w-full min-h-48 overflow-hidden rounded-t-2xl">
                 <img
                   src={article.image}
                   alt={article.title}
@@ -151,7 +165,6 @@ export default function Blog() {
                   </h2>
                 </div>
 
-                {/* View Article Button */}
                 <div className="mt-auto pt-3">
                   <span className="inline-block text-cyan-600 font-semibold text-sm group-hover:underline">
                     View Article →
