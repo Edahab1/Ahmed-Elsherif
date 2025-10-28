@@ -9,18 +9,18 @@ export default function Blog() {
   const articles = [
     {
       id: 1,
-      title: "Asset Reliability Strategies",
+      title: "Aligning asset management strategies",
       file: "/Articles/Aligning-asset-management-strategies.pdf",
     },
     {
       id: 2,
-      title: "Data Analytics in Maintenance",
+      title: "Asset integrity management",
       file: "/Articles/Asset-integrity-management.pdf",
     },
     {
       id: 3,
-      title: "Digital Transformation in Asset Management",
-      file: "/Articles/Optimizing-preventive-maintenance-in-refineries.pdf",
+      title: "Optimizing preventive maintenance in refineries",
+      file: "/Articles/optimizing-preventive-maintenance-in-refineries.pdf",
     },
   ];
 
