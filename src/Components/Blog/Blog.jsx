@@ -14,6 +14,7 @@ export default function Blog() {
       description:
         "How aligning business and asset strategies enhances long-term reliability and value creation.",
       file: "/Articles/Aligning-asset-management-strategies.pdf",
+      image: "/Articles/Aligning.png",
     },
     {
       id: 2,
@@ -21,6 +22,7 @@ export default function Blog() {
       description:
         "Key principles and practices for maintaining safety, reliability, and compliance in operations.",
       file: "/Articles/Asset-integrity-management.pdf",
+      image: "/Articles/integrity.png",
     },
     {
       id: 3,
@@ -28,6 +30,7 @@ export default function Blog() {
       description:
         "Leveraging analytics and reliability engineering to optimize preventive maintenance programs.",
       file: "/Articles/optimizing-preventive-maintenance-in-refineries.pdf",
+      image: "/Articles/optimizing.png",
     },
   ];
 
@@ -39,7 +42,8 @@ export default function Blog() {
     },
     {
       id: 2,
-      title: "Measuring and Deciding on the Optimal Inventory Level (Mini and Max)",
+      title:
+        "Measuring and Deciding on the Optimal Inventory Level (Mini and Max)",
       link: "https://www.linkedin.com/pulse/measuring-deciding-optimal-inventory-level-mini-max-ahmed-jnjqf",
     },
     {
@@ -49,7 +53,8 @@ export default function Blog() {
     },
     {
       id: 4,
-      title: "The Role of Lubrication in Reducing Downtime and Decreasing Maintenance Costs",
+      title:
+        "The Role of Lubrication in Reducing Downtime and Decreasing Maintenance Costs",
       link: "https://www.linkedin.com/pulse/role-lubrication-reducing-downtime-decreasing-costs-ahmed-el4ff",
     },
   ];
@@ -76,7 +81,8 @@ export default function Blog() {
         </div>
 
         <p className="text-gray-300 text-center text-sm sm:text-base md:text-lg pb-6 sm:pb-8 px-4">
-          Explore articles and insights on reliability, integrity, and asset management.
+          Explore articles and insights on reliability, integrity, and asset
+          management.
         </p>
       </header>
 
@@ -125,9 +131,18 @@ export default function Blog() {
               onClick={() => setSelectedArticle(article)}
               className="group bg-white rounded-2xl shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer border border-gray-100 flex flex-col justify-between h-full"
             >
-              <div className="flex flex-col h-full p-6">
-                {/* Icon + Title */}
-                <div className="flex items-center gap-3 mb-4">
+              {/* Image Preview */}
+              <div className="w-full  overflow-hidden rounded-t-2xl">
+                <img
+                  src={article.image}
+                  alt={article.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+
+              {/* Text Section */}
+              <div className="flex flex-col flex-grow p-6">
+                <div className="flex items-center gap-3 mb-3">
                   <div className="flex items-center justify-center bg-cyan-600/10 w-12 h-12 rounded-full group-hover:bg-cyan-600/20 transition">
                     <FileText className="text-cyan-600 w-6 h-6" />
                   </div>
@@ -136,13 +151,8 @@ export default function Blog() {
                   </h2>
                 </div>
 
-                {/* Description */}
-                <p className="text-gray-500 text-sm flex-grow leading-relaxed mb-4 line-clamp-4">
-                  {article.description}
-                </p>
-
-                {/* Footer */}
-                <div className="mt-auto pt-2">
+                {/* View Article Button */}
+                <div className="mt-auto pt-3">
                   <span className="inline-block text-cyan-600 font-semibold text-sm group-hover:underline">
                     View Article →
                   </span>
