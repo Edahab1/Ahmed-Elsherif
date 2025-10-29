@@ -25,7 +25,7 @@ const Hero = () => {
             src="/Elsherif Main.png"
             alt="Eng. Ahmed El-Sherif"
             className="object-contain lg:object-cover w-[70%] sm:w-[60%] md:w-[55%] lg:w-auto max-h-[calc(100vh-90px)] drop-shadow-2xl transition-transform duration-700 ease-out
-            scale-[1.5] sm:scale-[1.4] md:scale-[1.3] lg:scale-[1.8] 2xl:scale-[2.5]"
+            scale-[1.5] sm:scale-[1.4] md:scale-[1.3] lg:scale-[1.8]"
             style={{
               objectPosition: "bottom",
               marginBottom: "40px",
@@ -36,7 +36,7 @@ const Hero = () => {
         {/* Right: Text Content */}
         <div className="w-full lg:w-1/2 text-center flex flex-col items-center justify-end pb-10">
           {/* Main Heading */}
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-7xl font-extrabold leading-tight mb-6 tracking-tight text-white drop-shadow-lg">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-6 tracking-tight text-white drop-shadow-lg">
             Eng. Ahmed El-Sherif
           </h1>
 
