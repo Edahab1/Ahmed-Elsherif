@@ -56,7 +56,7 @@ export default function Navbar() {
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           type="button"
-          className="inline-flex items-center p-2 py-4 ml-3 text-sm text-slate-400 md:hidden"
+          className="inline-flex items-center p-2 py-4 ml-3 text-sm text-slate-400 lg:hidden"
           aria-expanded={menuOpen}
           aria-label="Toggle navigation"
         >
@@ -64,7 +64,7 @@ export default function Navbar() {
         </button>
 
         {/* Menu */}
-        <div className={`${menuOpen ? "block" : "hidden"} w-full md:block md:w-auto`}>
+        <div className={`${menuOpen ? "block" : "hidden"} w-full lg:block md:w-auto`}>
           <ul
             className={`font-medium flex flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 md:mt-0 ${
               menuOpen ? "text-white" : "md:bg-transparent"

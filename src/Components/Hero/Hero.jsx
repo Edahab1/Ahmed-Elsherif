@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center px-6 md:px-12 overflow-hidden"
+      className="relative min-h-screen flex flex-col lg:flex-row items-end justify-center px-6 md:px-12 overflow-hidden"
       style={{
         backgroundImage: `url(${bgPic})`,
         backgroundRepeat: "no-repeat",
@@ -18,34 +18,38 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black bg-opacity-80 z-0"></div>
 
       {/* Main content */}
-      <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center w-full mx-auto gap-8 pt-5">
+      <div className="relative z-10 flex flex-col lg:flex-row justify-around pt-[90px] lg:pt-0 pb-4">
         {/* Left: Image */}
-        <div className="w-full lg:w-1/3 flex justify-center lg:justify-start">
+        <div className="w-full lg:w-1/2 flex items-end justify-center lg:justify-start mt-2 lg:mt-0">
           <img
             src="/Elsherif Main.png"
             alt="Eng. Ahmed El-Sherif"
-            className="object-contain lg:object-cover h-[90vh] w-auto sm:h-[85vh] lg:h-[92vh] drop-shadow-2xl hover:scale-105 transition-transform duration-700 ease-out"
-            style={{ objectPosition: "bottom" }}
+            className="object-contain lg:object-cover w-[70%] sm:w-[60%] md:w-[55%] lg:w-auto max-h-[calc(100vh-90px)] drop-shadow-2xl transition-transform duration-700 ease-out
+            scale-[1.5] sm:scale-[1.4] md:scale-[1.3] lg:scale-[1.8]"
+            style={{
+              objectPosition: "bottom",
+              marginBottom: "40px",
+            }}
           />
         </div>
 
         {/* Right: Text Content */}
-        <div className="w-full lg:w-1/2 text-center flex flex-col items-center">
+        <div className="w-full lg:w-1/2 text-center flex flex-col items-center justify-end pb-10">
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6 tracking-tight text-white drop-shadow-lg">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-6 tracking-tight text-white drop-shadow-lg">
             Eng. Ahmed El-Sherif
           </h1>
 
           {/* Subheading */}
-          <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-cyan-400 drop-shadow-md">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-6 text-cyan-400 drop-shadow-md">
             Senior Reliability & Asset Management Consultant
-            <span className="block mt-1 text-gray-200 text-xl md:text-2xl">
+            <span className="block mt-1 text-gray-200 text-lg sm:text-xl md:text-2xl">
               (Technical Trainer)
             </span>
           </h2>
 
           {/* Description */}
-          <p className="text-lg md:text-xl text-gray-200 mb-10 leading-relaxed max-w-xl drop-shadow-md">
+          <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-10 leading-relaxed max-w-xl drop-shadow-md">
             Driving operational excellence by optimizing system reliability,
             minimizing downtime, and leveraging data analytics for proactive
             maintenance.
