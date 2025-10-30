@@ -21,6 +21,6 @@
 /* xl ≥1280px */
 @media (min-width: 1580px) {
   .hero-image {
-    transform: scale(2.3);
+    transform: scale(2.5);
   }
 }
