@@ -1,7 +1,7 @@
 import React from "react";
 import bgPic from "/Hero-bg.jpg";
 import { Link } from "react-scroll";
-import "D:/Projects/Eng-Ahmed/src/App.css"; // 👈 Import your global CSS here
+import "/src/App.css"; // 👈 Import your global CSS here
 
 const Hero = () => {
   return (
