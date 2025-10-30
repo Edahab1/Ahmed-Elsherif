@@ -1,6 +1,7 @@
 import React from "react";
 import bgPic from "/Hero-bg.jpg";
 import { Link } from "react-scroll";
+import "D:/Projects/Eng-Ahmed/src/App.css"; // 👈 Import your global CSS here
 
 const Hero = () => {
   return (
@@ -24,8 +25,7 @@ const Hero = () => {
           <img
             src="/Elsherif Main.png"
             alt="Eng. Ahmed El-Sherif"
-            className="object-contain lg:object-cover w-[70%] sm:w-[60%] md:w-[55%] lg:w-auto max-h-[calc(100vh-90px)] drop-shadow-2xl transition-transform duration-700 ease-out
-            scale-[1.5] sm:scale-[1.4] md:scale-[1.3] lg:scale-[1.8]"
+            className="hero-image object-contain lg:object-cover w-[70%] sm:w-[60%] md:w-[55%] lg:w-auto max-h-[calc(100vh-90px)] drop-shadow-2xl transition-transform duration-700 ease-out"
             style={{
               objectPosition: "bottom",
               marginBottom: "40px",
@@ -35,12 +35,10 @@ const Hero = () => {
 
         {/* Right: Text Content */}
         <div className="w-full lg:w-1/2 text-center flex flex-col items-center justify-end pb-10">
-          {/* Main Heading */}
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-6 tracking-tight text-white drop-shadow-lg">
             Eng. Ahmed El-Sherif
           </h1>
 
-          {/* Subheading */}
           <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-6 text-cyan-400 drop-shadow-md">
             Senior Reliability & Asset Management Consultant
             <span className="block mt-1 text-gray-200 text-lg sm:text-xl md:text-2xl">
@@ -48,14 +46,12 @@ const Hero = () => {
             </span>
           </h2>
 
-          {/* Description */}
           <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-10 leading-relaxed max-w-xl drop-shadow-md">
             Driving operational excellence by optimizing system reliability,
             minimizing downtime, and leveraging data analytics for proactive
             maintenance.
           </p>
 
-          {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-6 mb-8 cursor-pointer">
             <Link
               to="services"
@@ -77,7 +73,6 @@ const Hero = () => {
             </Link>
           </div>
 
-          {/* Social Icons */}
           <div className="flex justify-center lg:justify-start items-center space-x-6 text-4xl">
             <a
               href="https://www.youtube.com/channel/UCL5opv9lCxaDE0qs0kmcITQ"

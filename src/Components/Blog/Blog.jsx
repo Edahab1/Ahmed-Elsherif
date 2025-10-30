@@ -105,9 +105,9 @@ export default function Blog() {
         {/* Sidebar (Responsive) */}
         <aside
           className="
-            w-full md:w-[70%] lg:w-64 
+            w-full md:w-[70%] lg:w-72 
             bg-white rounded-2xl shadow-xl border border-gray-100 p-6 h-fit 
-            mx-auto md:mx-0 
+            mx-auto md:mx-0 xl:mx-12 
             lg:fixed lg:top-60 lg:left-10 
             lg:block
           "
@@ -135,8 +135,7 @@ export default function Blog() {
         {/* Articles Grid */}
         <div
           className="
-            flex-1 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 
-            w-full lg:ml-[300px]
+            flex-1 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 w-full lg:ml-[320px]
           "
         >
           {articles.map((article) => (
