@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { Link as RouterLink } from "react-router-dom";
 import logoDark from "/logo dark.png";
-import logoLight from "/logo light.png";
+// import logoLight from "/logo light.png";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -27,11 +27,11 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-500 ${
+      className={`custom-navbar fixed w-full z-50 transition-all duration-500 ${
         menuOpen
           ? "bg-gray-900 md:bg-transparent"
           : scrolled
-          ? "bg-white md:bg-white border-b border-gray-200 dark:bg-gray-900"
+          ? "scrolled bg-white md:bg-white border-b border-gray-200 dark:bg-gray-900"
           : "bg-transparent md:bg-transparent"
       }`}
     >
@@ -64,7 +64,7 @@ export default function Navbar() {
         </button>
 
         {/* Menu */}
-        <div className={`${menuOpen ? "block" : "hidden"} w-full lg:block md:w-auto`}>
+        <div className={`${menuOpen ? "block" : "hidden"} menu w-full lg:block md:w-auto`}>
           <ul
             className={`font-medium flex flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 md:mt-0 ${
               menuOpen ? "text-white" : "md:bg-transparent"

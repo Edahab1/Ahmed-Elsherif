@@ -21,6 +21,26 @@
 /* xl ≥1280px */
 @media (min-width: 1580px) {
   .hero-image {
-    transform: scale(2.5);
+    transform: scale(2.3);
+  }
+ 
+  .custom-navbar {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    transition: padding 0.5s ease;
+  }
+
+  .custom-navbar.scrolled {
+    padding-top: 0px;  /* smaller padding when scrolled */
+    padding-bottom: 0px;
+  }
+
+  .custom-navbar ul li a {
+    font-size: 1.2rem;
+    transition: font-size 0.5s ease;
+  }
+
+  .custom-navbar.scrolled ul li a {
+    font-size: 1.1rem; /* slightly smaller on scroll */
   }
 }
