@@ -32,6 +32,15 @@ export default function Blog() {
       file: "/Articles/optimizing-preventive-maintenance-in-refineries.pdf",
       image: "/Articles/optimizing.png",
     },
+    
+    {
+      id: 4,
+      title: "Building a Strategic Framework",
+      description:
+        "Asset Management STRATEGIES with Turnaround Planning",
+      file: "Articles/Asset-framework.pdf",
+      image: "Articles/Asset-framework.png",
+    },
   ];
 
   const moreArticles = [
@@ -122,7 +131,7 @@ export default function Blog() {
                   href={item.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-2 text-cyan-700 font-medium hover:text-cyan-900 transition group"
+                  className="flex items-start gap-4 text-cyan-700 font-medium hover:text-cyan-900 transition group"
                 >
                   <ExternalLink className="w-4 h-4 text-cyan-600 mt-1 group-hover:text-cyan-800 transition" />
                   <span className="text-sm leading-tight">{item.title}</span>
@@ -135,7 +144,7 @@ export default function Blog() {
         {/* Articles Grid */}
         <div
           className="
-            flex-1 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 w-full lg:ml-[320px]
+             grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 w-full lg:ml-[300px]
           "
         >
           {articles.map((article) => (
