@@ -13,7 +13,7 @@ export default function Footer() {
 
           {/* YouTube */}
           <a
-            href="https://www.youtube.com/channel/UCL5opv9lCxaDE0qs0kmcITQ"
+            href="https://www.youtube.com/@ahmedelsherif-1"
             target="_blank"
             rel="noopener noreferrer"
             className="transition duration-300 hover:scale-110"
@@ -24,7 +24,7 @@ export default function Footer() {
 
           {/* LinkedIn */}
           <a
-            href="https://www.linkedin.com/in/ahmed-el-sherif%E2%94%82cmrp-%C2%AE%E2%94%82crl-%C2%AE%E2%94%82cama2-%C2%AE%E2%94%82asu%E2%80%93li%C2%AE%E2%94%82bmi%C2%AE%E2%94%82tot%C2%AE-2010b3121/"
+            href="https://www.linkedin.com/in/ahmed-elsherif-reliability/"
             target="_blank"
             rel="noopener noreferrer"
             className="transition duration-300 hover:scale-110"

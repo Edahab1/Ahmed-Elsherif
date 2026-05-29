@@ -49,10 +49,11 @@ const Hero = () => {
           flex gap-5
         "
       >
-        <Link
-          to="home"
-          smooth={true}
-          duration={800}
+        {/* LinkedIn */}
+        <a
+          href="https://www.linkedin.com/in/ahmed-elsherif-reliability/"
+          target="_blank"
+          rel="noopener noreferrer"
           className="
             w-12 h-12
             md:w-14 md:h-14
@@ -74,16 +75,17 @@ const Hero = () => {
             hover:border-[#0A66C2]
             hover:scale-110
 
-            transition duration-300 cursor-pointer
+            transition duration-300
           "
         >
           <i className="fa-brands fa-linkedin-in"></i>
-        </Link>
+        </a>
 
-        <Link
-          to="home"
-          smooth={true}
-          duration={800}
+        {/* YouTube */}
+        <a
+          href="https://www.youtube.com/@ahmedelsherif-1"
+          target="_blank"
+          rel="noopener noreferrer"
           className="
             w-12 h-12
             md:w-14 md:h-14
@@ -105,11 +107,11 @@ const Hero = () => {
             hover:border-red-600
             hover:scale-110
 
-            transition duration-300 cursor-pointer
+            transition duration-300
           "
         >
           <i className="fa-brands fa-youtube"></i>
-        </Link>
+        </a>
       </div>
     </section>
   );
